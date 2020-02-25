@@ -4,7 +4,7 @@
 - User can view list of Monsters from D&D 5e
 - User can search, filter, & sort list
 - User can add Monsters to an "Encounter"
-- User can look at all the Monsters added, and view each one's stats quickly & sisinctly
+- User can look at all the Monsters added, and view each one's stats quickly & succinctly
 - User can click a button for each of a Monster's actions/attacks to roll the appropriate dice
 - User sees the result of the roll & damage in a side-bar
 - User can scroll through to view the previous results from the 
