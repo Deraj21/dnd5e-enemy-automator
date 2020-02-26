@@ -73,11 +73,23 @@ p {
   color: #797979;
 }
 
+strong {
+  font-weight: bold;
+}
+
 .App {
   min-height: 100vh;
   min-width: 100vw;
   background-color: white;
   text-align: center;
+}
+
+.Monster {
+  margin: 20px;
+  padding: 10px;
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=App.css.map */

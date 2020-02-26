@@ -13,6 +13,7 @@ class MonsterList extends Component {
     this.getData("https://api.open5e.com/monsters")
   }
 
+  // TODO: change later to call 2nd page when the user scrolls to the bottom
   getData(url){
     return Axios.get(url)
       .then(response => {

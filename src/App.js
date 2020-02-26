@@ -8,7 +8,7 @@ class App extends Component {
   constructor(){
     super()
 
-    this.isListView = false
+    this.isListView = true
   }
   
   render(){
@@ -16,7 +16,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>App</h1>
         {
           isListView
           ?

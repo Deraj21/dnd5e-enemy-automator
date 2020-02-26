@@ -2,32 +2,33 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import { connect } from 'react-redux';
 import { updateTest } from '../ducks/reducer';
+import Monster from './Monster';
 
 class Encounter extends Component {
   constructor(){
     super()
 
     this.state = {
-      monsters: []
+      monsterData: []
     }
-
-    this.nameList = [
-      "Goblin",
-      "Unicorn",
-      "Skein Witch"
-    ]
-    this.nameList.forEach(name => {
-      this.getMonster(name)
-        .then(res => {
-          let newMonsters = [...this.state.monsters, res.data.results[0]]
-          this.setState({
-            monsters: newMonsters
-          })
-        })
-    })
 
     // binding
     this.handleInput = this.handleInput.bind(this);
+  }
+
+  componentDidMount(){
+    let { monsterNames } = this.props
+
+    // load monsters
+    monsterNames.forEach(name => {
+      this.getMonster(name)
+        .then(res => {
+          let newMonsters = [...this.state.monsterData, res.data.results[0]]
+          this.setState({
+            monsterData: newMonsters
+          })
+        })
+    })
   }
 
   getMonster(name){
@@ -42,19 +43,10 @@ class Encounter extends Component {
   render(){
     let { test } = this.props
 
-    let monsters = this.state.monsters.map(mon => {
+    let monsters = this.state.monsterData.map(data => {
+
       return (
-        <div>
-          <h3>{mon.name}</h3>
-          <h4>Actions:</h4>
-          {
-            mon.actions.map(action => {
-              return (
-                <p><strong>{action.name}:</strong> {action.desc}</p>
-              )
-            })
-          }
-        </div>
+        <Monster data={ data }/>
       )
     })
 

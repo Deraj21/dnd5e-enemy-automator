@@ -15,18 +15,6 @@
 - react-redux
 - Axios
 
-## state (data that changes)
-```
-{
-  currentFilters: {  }, // data about the current filter settings
-  addedToEncounter: [ // list of id's that have been added to the encounter page
-    "goblin",
-    "bugbear-captain"
-  ],
-  actionHistory: [] // history of the actions clicked on
-} 
-```
-
 ## Todo (MVP)
 - [x] Setup general file structure
 - [x] research api
@@ -34,7 +22,7 @@
 - [x] Really basic display of `Encounter` & `MonsterList` pages to test Redux and Router
 - [ ] change API call to happen in `componentDidMount()`
 - [x] implement redux
-  - [ ] setup initial state to have monsterList
+  - [x] setup initial state to have monsterList
 - [ ] implement router
   - [ ] switch between tabs
 - [ ] `Encounter` page

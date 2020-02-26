@@ -1,8 +1,19 @@
 
 
+// initial state
+// {
+//   currentFilters: {  }, // data about the current filter settings
+//   addedToEncounter: [ // list of id's that have been added to the encounter page
+//     "goblin",
+//     "bugbear-captain"
+//   ],
+//   actionHistory: [] // history of the actions clicked on
+// }
+
 let initialState = {
   test: "This is a test",
-  monsterNames: [ "Goblin", "Unicorn", "Skein Witch" ]
+  monsterNames: [ "Goblin", "Unicorn", "Skein Witch" ],
+  monsterData: []
 }
 
 // action types
