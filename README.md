@@ -29,19 +29,17 @@
 
 ## Todo (MVP)
 - [x] Setup general file structure
-- [ ] Really basic display of `Encounter` & `MonsterList` pages to test Redux and Router
+- [x] research api
+- [x] setup API calls
+- [x] Really basic display of `Encounter` & `MonsterList` pages to test Redux and Router
 - [ ] implement redux
   - [ ] setup initial state
 - [ ] implement router
   - [ ] switch between tabs
-- [ ] research api
-- [ ] setup API calls
 - [ ] `Encounter` page
-  - [ ] display real data
   - [ ] click attacks & actions
   - [ ] syle the crap out of it!
 - [ ] `MonsterList` page
-  - [ ] get to display read data
   - [ ] search, filter, sort functionality
   - [ ] add monsters to encounters functionality
   - [ ] style!

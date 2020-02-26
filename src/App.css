@@ -63,15 +63,21 @@ h3 {
   font-size: 24px;
 }
 
-.App {
-  height: 100vh;
-  width: 100vw;
-  background-color: pink;
-  text-align: center;
+h4 {
+  font-size: 18px;
+  font-style: italic;
 }
 
-.Encounter {
-  color: blue;
+p {
+  font-size: 16px;
+  color: #797979;
+}
+
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: white;
+  text-align: center;
 }
 
 /*# sourceMappingURL=App.css.map */
