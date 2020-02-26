@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import MonsterListItem from './MonsterListItem'
 
 class MonsterList extends Component {
   constructor(){
@@ -21,21 +22,13 @@ class MonsterList extends Component {
         this.setState({
           data: newData
         })
-        if (response.data.next){
-          this.getData(response.data.next)
-        } else {
-          // 
-        }
       })
   }
 
   render() {        
     let monsterList = this.state.data.map(item => {
       return (
-        <div>
-          <h4>{item.name}</h4>
-          <p>{item.type}</p>
-        </div>
+        <MonsterListItem name={item.name} type={item.type} />
       )
     })
 

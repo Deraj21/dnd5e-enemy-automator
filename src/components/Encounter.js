@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { connect } from 'react-redux';
-import { updateTest } from '../ducks/reducer';
 import Monster from './Monster';
 
 class Encounter extends Component {
@@ -11,9 +10,6 @@ class Encounter extends Component {
     this.state = {
       monsterData: []
     }
-
-    // binding
-    this.handleInput = this.handleInput.bind(this);
   }
 
   componentDidMount(){
@@ -35,13 +31,7 @@ class Encounter extends Component {
     return Axios.get(`https://api.open5e.com/monsters/?name=${name}`)
   }
 
-  handleInput(e){
-    console.log(e.target.value);
-    this.props.updateTest(e.target.value);
-  }
-
   render(){
-    let { test } = this.props
 
     let monsters = this.state.monsterData.map(data => {
 
@@ -53,8 +43,6 @@ class Encounter extends Component {
     return (
       <div className="Encounter">
         <h2>Encounter Page</h2>
-        <h2>{test}</h2>
-        <input onChange={this.handleInput} value={test}/>
 
         { monsters }
       </div>
@@ -64,9 +52,8 @@ class Encounter extends Component {
 
 function mapStateToProps(state){
   return {
-    test: state.test, // edit
     monsterNames: state.monsterNames // read only
   }
 }
 
-export default connect(mapStateToProps, { updateTest })(Encounter)
+export default connect(mapStateToProps, null)(Encounter)

@@ -13,12 +13,13 @@
 let initialState = {
   test: "This is a test",
   monsterNames: [ "Goblin", "Unicorn", "Skein Witch" ],
-  monsterData: []
+  monsterData: [],
+  currentView: "MonsterList"
 }
 
 // action types
 const UPDATE_TEST = "UPDATE_TEST"
-const UPDATE_MONSTER_LIST = "UPDATE_MONSTER_LIST"
+const UPDATE_CURRENT_VIEW = "UPDATE_CURRENT_VIEW"
 
 // reducer
 function reducer(state = initialState, action){
@@ -26,6 +27,8 @@ function reducer(state = initialState, action){
   switch(type){
     case UPDATE_TEST:
       return Object.assign({}, state, { test: payload })
+    case UPDATE_CURRENT_VIEW:
+      return Object.assign({}, state, { currentView: payload })
     default:
       return state
   }
@@ -36,6 +39,13 @@ export function updateTest(test){
   return {
     type: UPDATE_TEST,
     payload: test
+  }
+}
+
+export function updateCurrentView(viewName){
+  return {
+    type: UPDATE_CURRENT_VIEW,
+    payload: viewName
   }
 }
 

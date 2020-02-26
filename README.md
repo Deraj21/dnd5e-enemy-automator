@@ -23,8 +23,7 @@
 - [ ] change API call to happen in `componentDidMount()`
 - [x] implement redux
   - [x] setup initial state to have monsterList
-- [ ] implement router
-  - [ ] switch between tabs
+- [x] switch between tabs
 - [ ] `Encounter` page
   - [ ] click attacks & actions
   - [ ] syle the crap out of it!
@@ -33,6 +32,7 @@
   - [ ] add monsters to encounters functionality
   - [ ] style!
   - [ ] dynamically load more monsters when user scrolls to bottom, rather than loading all at once
+- [ ] implement router (may not need this)
 
 ## Post-MVP
 - user can login and save multiple encounters
