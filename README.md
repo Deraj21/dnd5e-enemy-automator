@@ -32,8 +32,9 @@
 - [x] research api
 - [x] setup API calls
 - [x] Really basic display of `Encounter` & `MonsterList` pages to test Redux and Router
-- [ ] implement redux
-  - [ ] setup initial state
+- [ ] change API call to happen in `componentDidMount()`
+- [x] implement redux
+  - [ ] setup initial state to have monsterList
 - [ ] implement router
   - [ ] switch between tabs
 - [ ] `Encounter` page
@@ -43,6 +44,7 @@
   - [ ] search, filter, sort functionality
   - [ ] add monsters to encounters functionality
   - [ ] style!
+  - [ ] dynamically load more monsters when user scrolls to bottom, rather than loading all at once
 
 ## Post-MVP
 - user can login and save multiple encounters
