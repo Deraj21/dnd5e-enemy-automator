@@ -7,20 +7,26 @@ class MonsterList extends Component {
     super()
 
     this.state = {
-      data: []
+      data: [],
+      nextUrl: ''
     }
 
     this.data = [];
-    this.getData("https://api.open5e.com/monsters")
+    this.getData()
+  }
+
+  componentDidMount(){
+    this.getData()
   }
 
   // TODO: change later to call 2nd page when the user scrolls to the bottom
-  getData(url){
-    return Axios.get(url)
+  getData(){
+    return Axios.get("https://api.open5e.com/monsters")
       .then(response => {
         let newData = [...this.state.data, ...response.data.results]
         this.setState({
-          data: newData
+          data: newData,
+          nextUrl: response.data.next
         })
       })
   }
@@ -34,7 +40,7 @@ class MonsterList extends Component {
 
     return (
       <div className="MonsterList" >
-        <h2>Monster List</h2>
+        <h2>Add Monsters</h2>
         { monsterList }
       </div>
     )

@@ -5,6 +5,7 @@ import './App.css';
 
 import Encounter from './components/Encounter'
 import MonsterList from './components/MonsterList'
+import ActionHistory from './components/ActionHistory'
 
 class App extends Component {
   constructor(){
@@ -26,6 +27,7 @@ class App extends Component {
         <div className="tabs">
           <button toview="MonsterList" onClick={this.handleTabClick}>Add Monsters</button>
           <button toview="Encounter" onClick={this.handleTabClick}>Run Encounter</button>
+          <button toview="ActionHistory" onClick={this.handleTabClick}>Action History</button>
         </div>
 
         {
@@ -36,6 +38,10 @@ class App extends Component {
           currentView === "Encounter"
           ?
           <Encounter/>
+          :
+          currentView === "ActionHistory"
+          ?
+          <ActionHistory/>
           :
           <p>View not recognized</p>
         }

@@ -17,7 +17,7 @@ class Encounter extends Component {
 
     // load monsters
     monsterNames.forEach(name => {
-      this.getMonster(name)
+      this.getMonsters(name)
         .then(res => {
           let newMonsters = [...this.state.monsterData, res.data.results[0]]
           this.setState({
@@ -27,23 +27,22 @@ class Encounter extends Component {
     })
   }
 
-  getMonster(name){
+  getMonsters(name){
     return Axios.get(`https://api.open5e.com/monsters/?name=${name}`)
   }
 
   render(){
 
+    // monster components
     let monsters = this.state.monsterData.map(data => {
-
       return (
-        <Monster data={ data }/>
+        <Monster data={ data } key={`monster-${data.name}`}/>
       )
     })
 
     return (
       <div className="Encounter">
-        <h2>Encounter Page</h2>
-
+        <h2>Run Encounter</h2>
         { monsters }
       </div>
     );

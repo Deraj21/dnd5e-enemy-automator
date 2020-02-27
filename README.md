@@ -20,18 +20,23 @@
 - [x] research api
 - [x] setup API calls
 - [x] Really basic display of `Encounter` & `MonsterList` pages to test Redux and Router
-- [ ] change API call to happen in `componentDidMount()`
+- [x] change API call to happen in `componentDidMount()`
 - [x] implement redux
   - [x] setup initial state to have monsterList
 - [x] switch between tabs
-- [ ] `Encounter` page
+- [x] create basic `ActionHistory` component & add nav button
+- [ ] `Encounter`
+  - [ ] display full data
   - [ ] click attacks & actions
+  - [ ] message toast thing appears when actions used
   - [ ] syle the crap out of it!
-- [ ] `MonsterList` page
+- [ ] `MonsterList`
   - [ ] search, filter, sort functionality
   - [ ] add monsters to encounters functionality
   - [ ] style!
   - [ ] dynamically load more monsters when user scrolls to bottom, rather than loading all at once
+- [ ] `ActionHistory`
+  - [ ] style!
 - [ ] implement router (may not need this)
 
 ## Post-MVP
