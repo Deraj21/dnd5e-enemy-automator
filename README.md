@@ -26,10 +26,10 @@
 - [x] switch between tabs
 - [x] create basic `ActionHistory` component & add nav button
 - [ ] `Encounter`
-  - [ ] display full data
-  - [ ] click attacks & actions
+  - [x] display full data
+  - [x] click attacks & actions
+  - [x] syle the crap out of it!
   - [ ] message toast thing appears when actions used
-  - [ ] syle the crap out of it!
 - [ ] `MonsterList`
   - [ ] search, filter, sort functionality
   - [ ] add monsters to encounters functionality

@@ -52,27 +52,32 @@ body {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 50px;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 42px;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 16px;
+}
+
+h4, h5 {
+  font-weight: bold;
+  color: maroon;
 }
 
 p, label, span {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 label {
@@ -101,6 +106,25 @@ strong {
   padding: 10px;
   border: 1px solid gray;
   border-radius: 5px;
+  max-width: 500px;
+  font-family: serif;
+}
+.Monster .ability-score-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.Monster .monster-action, .Monster .monster-special {
+  margin: 10px 0px;
+}
+.Monster .monster-action {
+  cursor: pointer;
+}
+.Monster .monster-action:hover {
+  color: steelblue;
+}
+.Monster .hr-thin {
+  border-width: 0.5px;
 }
 
 .MonsterListItem {
