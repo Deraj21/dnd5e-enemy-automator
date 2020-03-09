@@ -10,9 +10,6 @@ class MonsterList extends Component {
       data: [],
       nextUrl: ''
     }
-
-    this.data = [];
-    this.getData()
   }
 
   componentDidMount(){
@@ -34,7 +31,7 @@ class MonsterList extends Component {
   render() {        
     let monsterList = this.state.data.map(item => {
       return (
-        <MonsterListItem name={item.name} type={item.type} />
+        <MonsterListItem key={`MonsterListItem-${item.name}`} name={item.name} type={item.type} />
       )
     })
 

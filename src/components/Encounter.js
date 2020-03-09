@@ -36,7 +36,7 @@ class Encounter extends Component {
     // monster components
     let monsters = this.state.monsterData.map(data => {
       return (
-        <Monster data={ data } key={`monster-${data.name}`}/>
+        <Monster data={ data } key={`Monster-${data.name}`}/>
       )
     })
 

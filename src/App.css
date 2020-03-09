@@ -51,6 +51,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+div {
+  box-sizing: border-box;
+}
+
 h1 {
   font-size: 50px;
 }
@@ -76,8 +80,13 @@ h4, h5 {
   color: maroon;
 }
 
-p, label, span {
+p, label, span, li {
   font-size: 14px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 label {
@@ -98,6 +107,56 @@ strong {
 
 .App {
   background-color: white;
+}
+
+.Footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  height: 10vh;
+  width: 100vw;
+  background-color: white;
+  box-shadow: 0px 0px 8px -3px black;
+}
+.Footer .link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 33%;
+}
+.Footer .link:hover {
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  background-color: maroon;
+  color: white;
+}
+.Footer .active-link {
+  text-decoration: underline;
+}
+.Footer img {
+  height: 4vh;
+  margin: 5px;
+}
+
+@media screen and (min-width: 375px) {
+  .Footer .link {
+    flex-direction: column;
+  }
+}
+.MessageToast {
+  position: fixed;
+  background-color: #bada55;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+}
+.MessageToast .Action {
+  background-color: #bada55;
+  border: none;
 }
 
 .Monster {
@@ -143,8 +202,11 @@ strong {
   background-color: azure;
   border: 1px solid gray;
   border-radius: 3px;
-  margin: 5px;
-  padding: 3px;
+  margin: 10px;
+  padding: 7px;
+}
+.Action p {
+  line-height: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */

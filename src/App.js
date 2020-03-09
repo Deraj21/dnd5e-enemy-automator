@@ -1,50 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateCurrentView } from './ducks/reducer'
+import routes from './routes'
 import './App.css';
 
-import Encounter from './components/Encounter'
-import MonsterList from './components/MonsterList'
-import ActionHistory from './components/ActionHistory'
-
 class App extends Component {
-  constructor(){
-    super()
 
-    this.handleTabClick = this.handleTabClick.bind(this)
-  }
-
-  handleTabClick(e){
-    let view = e.target.getAttribute("toview");
-    this.props.updateCurrentView(view);
-  }
-  
   render(){
-    let { currentView } = this.props
-
     return (
       <div className="App">
-        <div className="tabs">
-          <button toview="MonsterList" onClick={this.handleTabClick}>Add Monsters</button>
-          <button toview="Encounter" onClick={this.handleTabClick}>Run Encounter</button>
-          <button toview="ActionHistory" onClick={this.handleTabClick}>Action History</button>
-        </div>
-
-        {
-          currentView === "MonsterList"
-          ?
-          <MonsterList/>
-          :
-          currentView === "Encounter"
-          ?
-          <Encounter/>
-          :
-          currentView === "ActionHistory"
-          ?
-          <ActionHistory/>
-          :
-          <p>View not recognized</p>
-        }
+        { routes }
       </div>
     );
   }

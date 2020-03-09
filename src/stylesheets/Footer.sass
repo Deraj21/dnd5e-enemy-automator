@@ -1,0 +1,37 @@
+.Footer
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: center
+
+  position: fixed
+  bottom: 0px
+  height: 10vh
+  width: 100vw
+  background-color: white
+  box-shadow: 0px 0px 8px -3px black
+
+  .link
+    display: flex
+    justify-content: space-around
+    align-items: center
+    height: 100%
+    width: 33%
+    
+    &:hover
+      transition-property: background-color, color
+      transition-duration: .3s
+      background-color: maroon
+      color: white
+
+  .active-link
+    text-decoration: underline
+
+  img
+    height: 4vh
+    margin: 5px
+
+@media screen and (min-width: 375px)
+  .Footer
+    .link
+      flex-direction: column

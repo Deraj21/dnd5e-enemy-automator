@@ -16,6 +16,7 @@
 - Axios
 
 ## Todo (MVP)
+- **General**
 - [x] Setup general file structure
 - [x] research api
 - [x] setup API calls
@@ -25,22 +26,41 @@
   - [x] setup initial state to have monsterList
 - [x] switch between tabs
 - [x] create basic `ActionHistory` component & add nav button
-- [ ] `Encounter`
+- [ ] implement router so that when reloading, doesn't change the page
+  - [x] change nav-buttons to bottom of page for mobile
+  - [ ] code footer functionality (Links instead of buttons)
+- [ ] figure out nested-routing so that I can do master-detail when screen gets big enough
+- [ ] hide scrole-bar (or at least style to make thinner and nicer looking)
+- **Encounter**
   - [x] display full data
   - [x] click attacks & actions
   - [x] syle the crap out of it!
-  - [ ] message toast thing appears when actions used
-- [ ] `MonsterList`
-  - [ ] search, filter, sort functionality
+  - [x] actions are put into `actionHistory` in reducer
+  - [ ] *message-toast*-like thing appears when actions used
+    - [ ] can be dismissed by clicking little `x`
+    - [ ] can be swiped away on touch screen
+- **ActionHistory**
+  - [x] display history from reducer
+  - [x] style!
+
+- **MonsterList**
   - [ ] add monsters to encounters functionality
+  - [ ] search, filter, sort functionality
   - [ ] style!
   - [ ] dynamically load more monsters when user scrolls to bottom, rather than loading all at once
-- [ ] `ActionHistory`
-  - [ ] style!
-- [ ] implement router (may not need this)
 
 ## Post-MVP
 - user can login and save multiple encounters
   - maybe no login, just use cookies, and only save one encounter?
   - each saved encounter will only be a list of monster id's
 - desktop view displays when using over certain # of pixels
+
+
+## Routes
+- Footer
+- MessageToast
+
+- MonsterList
+- Encouter
+- ActionHistory
+

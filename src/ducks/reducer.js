@@ -1,19 +1,14 @@
-
-
-// initial state
-// {
-//   currentFilters: {  }, // data about the current filter settings
-// }
-
 let initialState = {
   currentView: "Encounter",
   monsterNames: [ "Goblin", "Flying Snake"/*, "Skein Witch"*/ ],
   monsterData: [], // maybe not needed
-  actionHistory: []
+  actionHistory: [],
+  currentFilters: []
 }
 
 // action types
-const UPDATE_CURRENT_VIEW = "UPDATE_CURRENT_VIEW"
+const UPDATE_CURRENT_VIEW = "UPDATE_CURRENT_VIEW",
+      ADD_ACTION_ITEM = "ADD_ACTION_ITEM"
 
 // reducer
 function reducer(state = initialState, action){
@@ -21,6 +16,8 @@ function reducer(state = initialState, action){
   switch(type){
     case UPDATE_CURRENT_VIEW:
       return Object.assign({}, state, { currentView: payload })
+    case ADD_ACTION_ITEM:
+      return { ...state, actionHistory: [...state.actionHistory, payload] }
     default:
       return state
   }
@@ -31,6 +28,13 @@ export function updateCurrentView(viewName){
   return {
     type: UPDATE_CURRENT_VIEW,
     payload: viewName
+  }
+}
+
+export function addActionItem(action){
+  return {
+    type: ADD_ACTION_ITEM,
+    payload: action
   }
 }
 

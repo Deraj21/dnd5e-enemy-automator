@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { addActionItem } from '../ducks/reducer'
 
 class ClickableAction extends Component {
   constructor(props){
@@ -31,11 +33,12 @@ class ClickableAction extends Component {
     let { monsterName, action } = this.props
     let { name } = action
 
-    let txt = ``
-    txt += `${monsterName} uses ${name}\n`
-    txt += `${this.rollAtk()} to hit; for ${this.rollDmg()} damage`
-
-    console.log(txt);
+    // add action to state
+    this.props.addActionItem({
+      monsterName, name,
+      atkRoll: this.rollAtk(),
+      dmgRoll: this.rollDmg()
+    })
   }
 
   render(){
@@ -48,4 +51,13 @@ class ClickableAction extends Component {
   }
 }
 
-export default ClickableAction
+function mapStateToProps(state){
+  let {
+    actionHistory
+  } = state
+  return {
+    actionHistory
+  }
+}
+
+export default connect(mapStateToProps, { addActionItem })(ClickableAction)
