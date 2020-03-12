@@ -1,6 +1,6 @@
 let initialState = {
   currentView: "Encounter",
-  monsterNames: [ "Goblin", "Flying Snake"/*, "Skein Witch"*/ ],
+  monsterNames: [],
   actionHistory: [],
   currentFilters: [],
   showMessage: false
@@ -9,7 +9,9 @@ let initialState = {
 // action types
 const UPDATE_CURRENT_VIEW = "UPDATE_CURRENT_VIEW",
       ADD_ACTION_ITEM = "ADD_ACTION_ITEM",
-      UPDATE_SHOW_MESSAGE = "UPDATE_SHOW_MESSAGE"
+      UPDATE_SHOW_MESSAGE = "UPDATE_SHOW_MESSAGE",
+      ADD_TO_ENCOUNTER = "ADD_TO_ENCOUNTER",
+      REMOVE_FROM_ENCOUNTER = "REMOVE_FROM_ENCOUNTER"
 
 // reducer
 function reducer(state = initialState, action){
@@ -21,6 +23,14 @@ function reducer(state = initialState, action){
       return { ...state, actionHistory: [...state.actionHistory, payload] }
     case UPDATE_SHOW_MESSAGE:
       return { ...state, showMessage: payload }
+    case ADD_TO_ENCOUNTER:
+      return { ...state, monsterNames: [...state.monsterNames, payload] }
+    case REMOVE_FROM_ENCOUNTER:
+      let newList = [ ...state.monsterNames ]
+      let index = newList.indexOf(payload)
+      let name = newList.splice(index, 1)[0]
+      console.log(name)
+      return { ...state, monsterNames: newList }
     default:
       return state
   }
@@ -45,6 +55,20 @@ export function updateShowMessage(bool){
   return {
     type: UPDATE_SHOW_MESSAGE,
     payload: bool
+  }
+}
+
+export function addToEncounter(name){
+  return {
+    type: ADD_TO_ENCOUNTER,
+    payload: name
+  }
+}
+
+export function removeFromEncounter(name){
+  return {
+    type: REMOVE_FROM_ENCOUNTER,
+    payload: name
   }
 }
 

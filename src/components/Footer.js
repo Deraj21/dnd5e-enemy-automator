@@ -23,7 +23,7 @@ class Footer extends Component {
 
     return (
       <div className="Footer">
-        <NavLink to="/MonsterList" className="link" activeClassName="active-link">
+        <NavLink to="/" className="link" activeClassName="active-link">
           <img src={werewolf} alt="werewolf"/>
           <p>Add Monsters</p>
         </NavLink>

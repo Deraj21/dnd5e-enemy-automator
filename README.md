@@ -17,25 +17,23 @@
   - Monsters in Encounter show 2 or 3 per row
   - MonsterList shows more and more info as screen gets bigger
 - hide scroll-bar (or at least style to make thinner and nicer looking)
+- clear Encounter button
+  - in MonsterList, Encounter, or both?
 - **Encounter**
   - ~~make monsters render at same position every time~~
   - ~~*message-toast*-like thing appears when actions used~~
     - ~~can be dismissed by clicking little `"x"`~~
     - can be swiped away on touch screen
-- **General**
-  - figure out nested-routing so that I can do master-detail when screen gets big enough
-  - hide scroll-bar (or at least style to make thinner and nicer looking)
 - **ActionHistory**
   - style better
-
 - **MonsterList**
-  - Monsters display more info
-  - Monsters display in a table rather than a list
-  - add monsters to encounters functionality
-  - dynamically load more monsters when user scrolls to bottom
+  - ~~Monsters display in a table rather than a list  ~~
+    - ~~basic style~~
+  - ~~add/remove monsters to encounters functionality~~
+  - ~~search functionality~~
 
 ## Post-MVP
-- search, filter, sort functionality in MonsterList
+- filters & sorts in MonsterList
 - link to google photos for each monster?
 - user can login and save multiple encounters
   - maybe no login, just use cookies, and only save one encounter?

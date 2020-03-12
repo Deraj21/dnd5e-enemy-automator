@@ -11,7 +11,7 @@ export default (
   <div>
     <Route path="/" component={Footer}/>
     <Route path="/" component={MessageToast}/>
-    <Route exact path="/MonsterList" component={MonsterList}/>
+    <Route exact path="/" component={MonsterList}/>
     <Route exact path="/Encounter" component={Encounter}/>
     <Route exact path="/ActionHistory" component={ActionHistory}/>
   </div>

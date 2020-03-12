@@ -131,6 +131,17 @@ strong {
   stroke: gray;
 }
 
+.AddButton svg {
+  background-color: whitesmoke;
+  border-radius: 3px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.AddButton svg path {
+  stroke: black;
+  stroke-width: 2px;
+}
+
 .Footer {
   display: flex;
   flex-direction: row;
@@ -214,14 +225,39 @@ strong {
   border-width: 0.5px;
 }
 
-.MonsterListItem {
-  margin: 10px;
-  padding: 5px;
-  background-color: whitesmoke;
-  border: 1px solid gray;
-  border-radius: 3px;
+.MonsterList table {
+  border-collapse: collapse;
+  text-align: left;
+}
+.MonsterList th, .MonsterList td {
+  margin: 100px 5px;
+  padding: 5px 10px;
+}
+.MonsterList th {
+  font-weight: bold;
+}
+.MonsterList .MonsterListItem {
+  cursor: pointer;
+}
+.MonsterList .MonsterListItem:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+.MonsterList .MonsterListItem:hover svg {
+  background-color: #c9eb92;
+}
+.MonsterList .added {
+  text-decoration: underline;
+}
+.MonsterList .added svg {
+  background-color: #c9eb92;
 }
 
+@media screen and (max-width: 375px) {
+  .MonsterList {
+    font-size: 12px;
+  }
+}
 .ActionHistory {
   background-color: white;
 }

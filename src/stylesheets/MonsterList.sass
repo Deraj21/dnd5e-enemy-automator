@@ -1,10 +1,28 @@
 .MonsterList
-  
-  
-.MonsterListItem
-  margin: 10px
-  padding: 5px
+  table
+    border-collapse: collapse
+    text-align: left
+  th, td
+    margin: 100px 5px
+    padding: 5px 10px
 
-  background-color: whitesmoke
-  border: 1px solid gray
-  border-radius: 3px
+  th
+    font-weight: bold
+  
+  .MonsterListItem
+    cursor: pointer
+
+    &:hover
+      text-decoration: underline
+      font-style: italic
+      svg
+        background-color: #c9eb92
+  
+  .added
+    text-decoration: underline
+    svg
+      background-color: #c9eb92
+
+@media screen and (max-width: 375px)
+  .MonsterList
+    font-size: 12px
