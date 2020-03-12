@@ -7,12 +7,12 @@ class ActionHistory extends Component{
   render(){
     let actions = this.props.actionHistory.map((action, i) => {
       return (
-        <Action action={action} i={i} />
+        <Action action={action} i={i} key={'Action-'+i} />
       )
     })
 
     return (
-      <div className="ActionHistory">
+      <div className="ActionHistory view">
         <h2>Action History</h2>
         { actions }
       </div>

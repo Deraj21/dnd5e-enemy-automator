@@ -36,7 +36,7 @@ class MonsterList extends Component {
     })
 
     return (
-      <div className="MonsterList" >
+      <div className="MonsterList view" >
         <h2>Add Monsters</h2>
         { monsterList }
       </div>

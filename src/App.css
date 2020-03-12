@@ -97,16 +97,38 @@ hr {
   border: 1px solid firebrick;
 }
 
-.emph {
-  font-style: italic;
-}
-
 strong {
   font-weight: bold;
 }
 
+.emph {
+  font-style: italic;
+}
+
 .App {
   background-color: white;
+}
+.App .view {
+  margin-bottom: 100px;
+}
+.App .hidden {
+  visibility: hidden;
+}
+
+.CloseButton {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3px;
+}
+.CloseButton svg {
+  cursor: pointer;
+}
+.CloseButton svg path {
+  stroke: white;
+  stroke-width: 2px;
+}
+.CloseButton svg:hover path {
+  stroke: gray;
 }
 
 .Footer {
@@ -116,7 +138,7 @@ strong {
   align-items: center;
   position: fixed;
   bottom: 0px;
-  height: 10vh;
+  height: 80px;
   width: 100vw;
   background-color: white;
   box-shadow: 0px 0px 8px -3px black;
@@ -138,7 +160,7 @@ strong {
   text-decoration: underline;
 }
 .Footer img {
-  height: 4vh;
+  height: 36px;
   margin: 5px;
 }
 
@@ -148,14 +170,20 @@ strong {
   }
 }
 .MessageToast {
+  display: flex;
+  justify-content: space-between;
   position: fixed;
-  background-color: #bada55;
-  border: 1px solid black;
+  bottom: 90px;
+  margin-left: 5%;
+  background-color: #101154;
+  color: white;
   border-radius: 5px;
-  margin: 10px;
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 28px -7px black;
+  width: 90%;
 }
 .MessageToast .Action {
-  background-color: #bada55;
+  background-color: inherit;
   border: none;
 }
 
@@ -199,7 +227,8 @@ strong {
 }
 
 .Action {
-  background-color: azure;
+  background-color: #101154;
+  color: white;
   border: 1px solid gray;
   border-radius: 3px;
   margin: 10px;

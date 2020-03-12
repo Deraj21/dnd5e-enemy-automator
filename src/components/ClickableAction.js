@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addActionItem } from '../ducks/reducer'
+import { addActionItem, updateShowMessage } from '../ducks/reducer'
 
 class ClickableAction extends Component {
   constructor(props){
@@ -39,6 +39,7 @@ class ClickableAction extends Component {
       atkRoll: this.rollAtk(),
       dmgRoll: this.rollDmg()
     })
+    this.props.updateShowMessage(true)
   }
 
   render(){
@@ -60,4 +61,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, { addActionItem })(ClickableAction)
+export default connect(mapStateToProps, { addActionItem, updateShowMessage })(ClickableAction)

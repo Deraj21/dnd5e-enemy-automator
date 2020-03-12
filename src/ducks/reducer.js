@@ -1,14 +1,15 @@
 let initialState = {
   currentView: "Encounter",
   monsterNames: [ "Goblin", "Flying Snake"/*, "Skein Witch"*/ ],
-  monsterData: [], // maybe not needed
   actionHistory: [],
-  currentFilters: []
+  currentFilters: [],
+  showMessage: false
 }
 
 // action types
 const UPDATE_CURRENT_VIEW = "UPDATE_CURRENT_VIEW",
-      ADD_ACTION_ITEM = "ADD_ACTION_ITEM"
+      ADD_ACTION_ITEM = "ADD_ACTION_ITEM",
+      UPDATE_SHOW_MESSAGE = "UPDATE_SHOW_MESSAGE"
 
 // reducer
 function reducer(state = initialState, action){
@@ -18,6 +19,8 @@ function reducer(state = initialState, action){
       return Object.assign({}, state, { currentView: payload })
     case ADD_ACTION_ITEM:
       return { ...state, actionHistory: [...state.actionHistory, payload] }
+    case UPDATE_SHOW_MESSAGE:
+      return { ...state, showMessage: payload }
     default:
       return state
   }
@@ -35,6 +38,13 @@ export function addActionItem(action){
   return {
     type: ADD_ACTION_ITEM,
     payload: action
+  }
+}
+
+export function updateShowMessage(bool){
+  return {
+    type: UPDATE_SHOW_MESSAGE,
+    payload: bool
   }
 }
 

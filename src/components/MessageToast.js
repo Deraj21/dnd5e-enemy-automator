@@ -1,17 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { updateShowMessage } from '../ducks/reducer'
 
 import Action from './Action'
+import CloseButton from './buttons/CloseButton'
 
 class MessageToast extends Component {
+  constructor(props){
+    super(props)
+
+    this.handleCloseClick = this.handleCloseClick.bind(this)
+  }
+
+  handleCloseClick(){
+    this.props.updateShowMessage(false)
+  }
 
   render(){
-    let { actionHistory } = this.props
-    let latest = actionHistory[actionHistory.length - 1] ? actionHistory[actionHistory.length - 1] : {}
+    let { actionHistory, showMessage } = this.props
+    let latest = actionHistory[actionHistory.length - 1] ? actionHistory[actionHistory.length - 1] : null
 
     return (
-      <div className="MessageToast">
-        <Action action={latest} />
+      <div className={`MessageToast${latest && showMessage ? "" : " hidden"}`}>
+        <Action action={latest !== null ? latest : {}} />
+        <CloseButton onClick={this.handleCloseClick}/>
       </div>
     )
   }
@@ -19,11 +31,13 @@ class MessageToast extends Component {
 
 function mapStateToProps(state) {
   let {
-    actionHistory
+    actionHistory,
+    showMessage
   } = state
   return {
-    actionHistory
+    actionHistory,
+    showMessage
   }
 }
 
-export default connect(mapStateToProps, null)(MessageToast)
+export default connect(mapStateToProps, { updateShowMessage })(MessageToast)

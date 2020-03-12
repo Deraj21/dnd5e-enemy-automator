@@ -8,7 +8,8 @@ class Encounter extends Component {
     super()
 
     this.state = {
-      monsterData: []
+      monsterData: [],
+      index: 0
     }
   }
 
@@ -16,10 +17,10 @@ class Encounter extends Component {
     let { monsterNames } = this.props
 
     // load monsters
-    monsterNames.forEach(name => {
+    monsterNames.forEach((name, i) => {
       this.getMonsters(name)
         .then(res => {
-          let newMonsters = [...this.state.monsterData, res.data.results[0]]
+          let newMonsters = [...this.state.monsterData, { i: i, data: res.data.results[0] }]
           this.setState({
             monsterData: newMonsters
           })
@@ -34,14 +35,16 @@ class Encounter extends Component {
   render(){
 
     // monster components
-    let monsters = this.state.monsterData.map(data => {
-      return (
-        <Monster data={ data } key={`Monster-${data.name}`}/>
-      )
-    })
+    let monsters = this.state.monsterData
+      .sort((a,b) => a.i - b.i )
+      .map(m => {
+        return (
+          <Monster data={ m.data } key={`Monster-${m.data.name}`}/>
+        )
+      })
 
     return (
-      <div className="Encounter">
+      <div className="Encounter view">
         <h2>Run Encounter</h2>
         { monsters }
       </div>

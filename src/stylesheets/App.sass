@@ -38,16 +38,23 @@ label
 hr
   border: 1px solid firebrick
 
-.emph
-  font-style: italic
-
 strong
   font-weight: bold
+
+.emph
+  font-style: italic
 
 .App
   background-color: white
 
+  .view
+    margin-bottom: 100px
+
+  .hidden
+    visibility: hidden
+
 // import component styles
+@import 'buttons.sass'
 @import 'Footer.sass'
 @import 'MessageToast.sass'
 @import 'Encounter.sass'
