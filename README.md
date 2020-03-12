@@ -30,7 +30,11 @@
   - [x] change nav-buttons to bottom of page for mobile
   - [ ] code footer functionality (Links instead of buttons)
 - [ ] figure out nested-routing so that I can do master-detail when screen gets big enough
-- [ ] hide scrole-bar (or at least style to make thinner and nicer looking)
+- [ ] style everything to work for mobile and bigger
+  - [ ] Footer changes to tabs?
+  - [ ] Monsters in Encounter show 2 or 3 per row
+  - [ ] MonsterList shows more and more info as screen gets bigger
+- [ ] hide scroll-bar (or at least style to make thinner and nicer looking)
 - **Encounter**
   - [x] display full data
   - [x] click attacks & actions
@@ -41,7 +45,7 @@
     - [ ] can be swiped away on touch screen
 - **ActionHistory**
   - [x] display history from reducer
-  - [x] style!
+  - [ ] style better
 
 - **MonsterList**
   - [ ] add monsters to encounters functionality
