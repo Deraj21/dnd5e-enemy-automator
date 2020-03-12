@@ -36,35 +36,26 @@
   - [ ] MonsterList shows more and more info as screen gets bigger
 - [ ] hide scroll-bar (or at least style to make thinner and nicer looking)
 - **Encounter**
-  - [x] display full data
-  - [x] click attacks & actions
-  - [x] syle the crap out of it!
-  - [x] actions are put into `actionHistory` in reducer
-  - [ ] *message-toast*-like thing appears when actions used
-    - [ ] can be dismissed by clicking little `x`
-    - [ ] can be swiped away on touch screen
+  - *message-toast*-like thing appears when actions used
+    - can be dismissed by clicking little `"x"`
+    - can be swiped away on touch screen
+- **General**
+  - figure out nested-routing so that I can do master-detail when screen gets big enough
+  - hide scroll-bar (or at least style to make thinner and nicer looking)
 - **ActionHistory**
   - [x] display history from reducer
   - [ ] style better
 
 - **MonsterList**
-  - [ ] add monsters to encounters functionality
-  - [ ] search, filter, sort functionality
-  - [ ] style!
-  - [ ] dynamically load more monsters when user scrolls to bottom, rather than loading all at once
+  - add monsters to encounters functionality
+  - style!
+  - dynamically load more monsters when user scrolls to bottom
 
 ## Post-MVP
+- search, filter, sort functionality in MonsterList
 - user can login and save multiple encounters
   - maybe no login, just use cookies, and only save one encounter?
   - each saved encounter will only be a list of monster id's
 - desktop view displays when using over certain # of pixels
 
-
-## Routes
-- Footer
-- MessageToast
-
-- MonsterList
-- Encouter
-- ActionHistory
 
