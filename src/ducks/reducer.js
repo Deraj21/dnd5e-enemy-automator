@@ -1,6 +1,6 @@
 let initialState = {
   currentView: "Encounter",
-  monsterNames: [],
+  monsterNames: ["Skein Witch"],
   actionHistory: [],
   currentFilters: [],
   showMessage: false
@@ -29,7 +29,6 @@ function reducer(state = initialState, action){
       let newList = [ ...state.monsterNames ]
       let index = newList.indexOf(payload)
       let name = newList.splice(index, 1)[0]
-      console.log(name)
       return { ...state, monsterNames: newList }
     default:
       return state

@@ -248,6 +248,7 @@ strong {
 }
 .MonsterList .added {
   text-decoration: underline;
+  font-weight: bold;
 }
 .MonsterList .added svg {
   background-color: #c9eb92;
