@@ -14,30 +14,29 @@
 - figure out nested-routing so that I can do master-detail when screen gets big enough
 - style everything to work for mobile and bigger
   - Footer changes to tabs?
-  - Monsters in Encounter show 2 or 3 per row
+  - Monsters in Encounter show multiple per row
   - MonsterList shows more and more info as screen gets bigger
 - hide scroll-bar (or at least style to make thinner and nicer looking)
-- clear Encounter button
-  - in MonsterList, Encounter, or both?
 - **Encounter**
-  - ~~make monsters render at same position every time~~
-  - ~~*message-toast*-like thing appears when actions used~~
-    - ~~can be dismissed by clicking little `"x"`~~
-    - can be swiped away on touch screen
+  - make actions work better
+    - some are coming back with `NaN` or not firing at all
+    - figure out how to do multi-attacks or special actions
+    - account for critical rolls
+  - Message Toast can be swiped away on touch screen
 - **ActionHistory**
   - style better
 - **MonsterList**
-  - ~~Monsters display in a table rather than a list  ~~
-    - ~~basic style~~
-  - ~~add/remove monsters to encounters functionality~~
-  - ~~search functionality~~
 
 ## Post-MVP
+- figure out how to keep state with a reload (cookies?)
+- clear Encounter button
+  - in MonsterList, Encounter, or both?
 - filters & sorts in MonsterList
 - link to google photos for each monster?
-- user can login and save multiple encounters
+- ADD ABACKEND:
+  - user can login and save multiple encounters
   - maybe no login, just use cookies, and only save one encounter?
-  - each saved encounter will only be a list of monster id's
-- desktop view displays when using over certain # of pixels
+  - each saved encounter will only need to store a list of monster id's
 
 
+`LEFT OFF: trying to add crit functionality; need to test; next, test action-clicking for many types of enemies`

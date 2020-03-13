@@ -66,7 +66,7 @@ function Monster(props){
   // actions
   let actionElements = actions.map(action => {
     return (
-      <ClickableAction key={`${name}-${action.name}`} monsterName={name} action={action}  />
+      <ClickableAction key={`${name}-${action.name}`} monsterName={name} action={action} />
     )
   })
 
