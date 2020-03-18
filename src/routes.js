@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 import MonsterList from './components/MonsterList'
 import Encounter from './components/Encounter'
@@ -11,7 +11,7 @@ export default (
   <div>
     <Route path="/" component={Footer}/>
     <Route path="/" component={MessageToast}/>
-    <Route exact path="/" component={MonsterList}/>
+    <Route exact path="/MonsterList" component={MonsterList}/>
     <Route exact path="/Encounter" component={Encounter}/>
     <Route exact path="/ActionHistory" component={ActionHistory}/>
   </div>

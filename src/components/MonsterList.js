@@ -1,46 +1,41 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import { connect } from 'react-redux'
+import { updateMonsterData, updateSearch } from '../ducks/reducer'
+
 import MonsterListItem from './MonsterListItem'
 
 class MonsterList extends Component {
   constructor(){
     super()
 
-    this.state = {
-      data: [],
-      nextUrl: '',
-      search: ''
-    }
-
     this.handleSearchChange = this.handleSearchChange.bind(this)
   }
 
   componentDidMount(){
-    this.getData()
+    let { monsterData, updateMonsterData } = this.props
+    if (!monsterData.length){
+      this.getData()
+        .then(response => {
+          // let newData = [...]
+          updateMonsterData( response.data.results )
+        })
+    }
   }
 
   handleSearchChange(e){
-    this.setState({
-      search: e.target.value
-    })
+    this.props.updateSearch( e.target.value )
   }
 
   // TODO: change later to call 2nd page when the user scrolls to the bottom
   getData(){
     return Axios.get("https://api.open5e.com/monsters/?fields=slug,name,challenge_rating,type,size,hit_points,document__slug,%20document__title&limit=2000&ordering=slug")
-      .then(response => {
-        let newData = [...this.state.data, ...response.data.results]
-        this.setState({
-          data: newData,
-          nextUrl: response.data.next
-        })
-      })
   }
 
   render() {
-    let { search, data } = this.state
+    let { monsterData, search } = this.props
 
-    let monsterList = data
+    let monsterList = monsterData
       .filter(item => {
         return item.name.includes(search) || item.slug.includes(search)
       })
@@ -80,4 +75,15 @@ class MonsterList extends Component {
   }
 }
 
-export default MonsterList
+function mapStateToProps(state){
+  let {
+    monsterData,
+    search
+  } = state
+  return {
+    monsterData,
+    search
+  }
+}
+
+export default connect(mapStateToProps, { updateMonsterData, updateSearch })(MonsterList)

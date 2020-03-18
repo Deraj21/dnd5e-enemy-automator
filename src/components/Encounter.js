@@ -54,7 +54,7 @@ class Encounter extends Component {
 
 function mapStateToProps(state){
   return {
-    monsterNames: state.monsterNames // read only
+    monsterNames: state.monsterNames // read only (for now)
   }
 }
 

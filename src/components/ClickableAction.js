@@ -11,7 +11,7 @@ class ClickableAction extends Component {
 
   rollDmg(crit = false){
     let { damage_dice, damage_bonus } = this.props.action
-    let total = damage_bonus ? damage_dice : 0
+    let total = damage_bonus ? damage_bonus : 0
     if (damage_dice){
 
       let num = parseInt(damage_dice.split('d')[0]) * (crit ? 2 : 1)
@@ -26,14 +26,19 @@ class ClickableAction extends Component {
   }
 
   rollAtk(){
-    let { attack_bonus } = this.props.action
+    let { attack_bonus, desc } = this.props.action
+
+    let bonus = attack_bonus ? attack_bonus : 0
     let natRoll = Math.ceil(Math.random() * 20)
-    return natRoll === 20 ? 'CRIT' : natRoll + attack_bonus
+    return natRoll === 20 ? 'CRIT' : natRoll + bonus
   }
 
   handleClick(e){
-    let { monsterName, action } = this.props
+    let { monsterName, action, isMulti } = this.props
     let { name } = action
+    
+    if (isMulti) { return }
+
     let atkRoll = this.rollAtk()
 
     // add action to state
@@ -49,8 +54,9 @@ class ClickableAction extends Component {
     let { name, desc } = this.props.action
 
     return (
-      <p className="monster-action" title="Click to Trigger" onClick={this.handleClick}
-      ><strong className="emph">{name}.</strong> {desc}</p>
+      <p className="monster-action" title="Click to Trigger" onClick={this.handleClick}>
+        <strong className="emph">{name}.</strong>{desc}
+      </p>
     )
   }
 }

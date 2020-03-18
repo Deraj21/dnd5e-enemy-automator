@@ -153,6 +153,7 @@ strong {
   width: 100vw;
   background-color: white;
   box-shadow: 0px 0px 8px -3px black;
+  cursor: pointer;
 }
 .Footer .link {
   display: flex;
@@ -169,6 +170,8 @@ strong {
 }
 .Footer .active-link {
   text-decoration: underline;
+  background-color: maroon;
+  color: white;
 }
 .Footer img {
   height: 36px;
@@ -230,8 +233,8 @@ strong {
   text-align: left;
 }
 .MonsterList th, .MonsterList td {
-  margin: 100px 5px;
   padding: 5px 10px;
+  vertical-align: middle;
 }
 .MonsterList th {
   font-weight: bold;

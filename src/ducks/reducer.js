@@ -1,17 +1,21 @@
 let initialState = {
   currentView: "Encounter",
-  monsterNames: ["Skein Witch"],
+  monsterData: [],
+  monsterNames: [""],
   actionHistory: [],
   currentFilters: [],
+  search: "",
   showMessage: false
 }
 
 // action types
 const UPDATE_CURRENT_VIEW = "UPDATE_CURRENT_VIEW",
+      UPDATE_MONSTER_DATA = "UPDATE_MONSTER_DATA",
       ADD_ACTION_ITEM = "ADD_ACTION_ITEM",
       UPDATE_SHOW_MESSAGE = "UPDATE_SHOW_MESSAGE",
       ADD_TO_ENCOUNTER = "ADD_TO_ENCOUNTER",
-      REMOVE_FROM_ENCOUNTER = "REMOVE_FROM_ENCOUNTER"
+      REMOVE_FROM_ENCOUNTER = "REMOVE_FROM_ENCOUNTER",
+      UPDATE_SEARCH = "UPDATE_SEARCH"
 
 // reducer
 function reducer(state = initialState, action){
@@ -19,6 +23,8 @@ function reducer(state = initialState, action){
   switch(type){
     case UPDATE_CURRENT_VIEW:
       return Object.assign({}, state, { currentView: payload })
+    case UPDATE_MONSTER_DATA:
+      return { ...state, monsterData: payload }
     case ADD_ACTION_ITEM:
       return { ...state, actionHistory: [...state.actionHistory, payload] }
     case UPDATE_SHOW_MESSAGE:
@@ -30,6 +36,8 @@ function reducer(state = initialState, action){
       let index = newList.indexOf(payload)
       let name = newList.splice(index, 1)[0]
       return { ...state, monsterNames: newList }
+    case UPDATE_SEARCH:
+      return { ...state, search: payload }
     default:
       return state
   }
@@ -40,6 +48,13 @@ export function updateCurrentView(viewName){
   return {
     type: UPDATE_CURRENT_VIEW,
     payload: viewName
+  }
+}
+
+export function updateMonsterData(data){
+  return {
+    type: UPDATE_MONSTER_DATA,
+    payload: data
   }
 }
 
@@ -68,6 +83,13 @@ export function removeFromEncounter(name){
   return {
     type: REMOVE_FROM_ENCOUNTER,
     payload: name
+  }
+}
+
+export function updateSearch(search){
+  return {
+    type: UPDATE_SEARCH,
+    payload: search
   }
 }
 

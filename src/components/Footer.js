@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 import { updateCurrentView } from '../ducks/reducer'
 
 import werewolf from '../media/werewolf.png'
@@ -23,15 +23,15 @@ class Footer extends Component {
 
     return (
       <div className="Footer">
-        <NavLink to="/" className="link" activeClassName="active-link">
+        <NavLink exact to="/" className="link" activeClassName="active-link">
           <img src={werewolf} alt="werewolf"/>
           <p>Add Monsters</p>
         </NavLink>
-        <NavLink to="/Encounter" className="link" activeClassName="active-link">
+        <NavLink exact to="/Encounter" className="link" activeClassName="active-link">
           <img src={swordShield} alt="sword and sheild"/>
           <p>Run Encounter</p>
         </NavLink>
-        <NavLink to="/ActionHistory" className="link" activeClassName="active-link">
+        <NavLink exact to="/ActionHistory" className="link" activeClassName="active-link">
           <img src={d20} alt="d20"/>
           <p>Action History</p>
         </NavLink>

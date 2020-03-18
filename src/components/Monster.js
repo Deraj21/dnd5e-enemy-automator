@@ -47,26 +47,32 @@ function Monster(props){
   
   // skills
   let skillElements = []
+  let isFirst = true
   for (let key in skills){
     let sign = skills[key] > 0 ? '+' : ''
     skillElements.push(
-      <span key={`${name}-skill-${key}`}>{key} {sign}{skills[key]}</span>
+      <span key={`${name}-skill-${key}`}>{!isFirst ? ", " : ""}{key} {sign}{skills[key]}</span>
     )
+    isFirst = false
   }
   if (skillElements.length === 0){
     skillElements.push( <span key={`${name}-noskill`}>-</span> )
   }
 
   // special abilities
-  let specialAbilitiesElements = special_abilities.map(special => (
-    <p className="monster-special" key={`${name}-${special.name}`}
-    ><strong className="emph">{special.name}.</strong> {special.desc}</p>
-  ))
+  let specialAbilitiesElements = []
+  if (special_abilities){
+    specialAbilitiesElements = special_abilities.map(special => (
+      <p className="monster-special" key={`${name}-${special.name}`}
+      ><strong className="emph">{special.name}.</strong> {special.desc}</p>
+    ))
+  }
 
   // actions
   let actionElements = actions.map(action => {
+    let isMulti = action.name === "Multiattack"
     return (
-      <ClickableAction key={`${name}-${action.name}`} monsterName={name} action={action} />
+      <ClickableAction key={`${name}-${action.name}`} monsterName={name} action={action} isMulti={isMulti} />
     )
   })
 
