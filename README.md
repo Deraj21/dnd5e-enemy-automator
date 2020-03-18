@@ -26,12 +26,12 @@
 
 ## Post-MVP
 - ~~figure out how to keep state with a reload (cookies?)~~
-- figure out how to do multi-attacks or special actions
+- figure out how to handle multi-attacks or special actions
 - clear Encounter button
   - in MonsterList, Encounter, or both?
 - filters & sorts in MonsterList
 - link to google photos for each monster?
-- ADD ABACKEND:
+- ADD A BACKEND:
   - user can login and save multiple encounters
   - maybe no login, just use cookies, and only save one encounter?
   - each saved encounter will only need to store a list of monster id's

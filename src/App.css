@@ -51,7 +51,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-div {
+div, p {
   box-sizing: border-box;
 }
 
@@ -80,7 +80,7 @@ h4, h5 {
   color: maroon;
 }
 
-p, label, span, li {
+p, label, span, li, td, th {
   font-size: 14px;
 }
 
@@ -95,6 +95,15 @@ label {
 
 hr {
   border: 1px solid firebrick;
+}
+
+th, td {
+  padding: 5px 10px;
+  vertical-align: middle;
+}
+
+th {
+  font-weight: bold;
 }
 
 strong {
@@ -124,7 +133,7 @@ strong {
   cursor: pointer;
 }
 .CloseButton svg path {
-  stroke: white;
+  stroke: black;
   stroke-width: 2px;
 }
 .CloseButton svg:hover path {
@@ -189,10 +198,10 @@ strong {
   position: fixed;
   bottom: 90px;
   margin-left: 5%;
-  background-color: #101154;
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 5px;
-  border: 1px solid lightgray;
+  border: 1px solid gray;
   box-shadow: 0px 0px 28px -7px black;
   width: 90%;
 }
@@ -216,13 +225,30 @@ strong {
   justify-content: space-around;
 }
 .Monster .monster-action, .Monster .monster-special {
-  margin: 10px 0px;
+  margin: 5px 0px;
 }
 .Monster .monster-action {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
-.Monster .monster-action:hover {
-  color: steelblue;
+.Monster .monster-action p {
+  cursor: pointer;
+  border: 1px solid lemonchiffon;
+  padding: 3px;
+  margin: 0px 5px;
+}
+.Monster .monster-action p:hover {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+.Monster .multi {
+  cursor: inherit;
+}
+.Monster .multi p:hover {
+  cursor: default;
+  border: 1px solid lemonchiffon;
+  background-color: inherit;
 }
 .Monster .hr-thin {
   border-width: 0.5px;
@@ -231,13 +257,6 @@ strong {
 .MonsterList table {
   border-collapse: collapse;
   text-align: left;
-}
-.MonsterList th, .MonsterList td {
-  padding: 5px 10px;
-  vertical-align: middle;
-}
-.MonsterList th {
-  font-weight: bold;
 }
 .MonsterList .MonsterListItem {
   cursor: pointer;
@@ -267,12 +286,14 @@ strong {
 }
 
 .Action {
-  background-color: #101154;
-  color: white;
+  background-color: white;
   border: 1px solid gray;
   border-radius: 3px;
   margin: 10px;
   padding: 7px;
+}
+.Action th, .Action td {
+  padding: 1px 4px;
 }
 .Action p {
   line-height: 20px;

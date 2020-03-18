@@ -7,6 +7,7 @@ class ClickableAction extends Component {
     super(props)
 
     this.handleClick = this.handleClick.bind(this)
+    this.handleDropdownChange = this.handleDropdownChange.bind(this)
   }
 
   rollDmg(crit = false){
@@ -33,30 +34,64 @@ class ClickableAction extends Component {
     return natRoll === 20 ? 'CRIT' : natRoll + bonus
   }
 
-  handleClick(e){
+  handleClick(numTimes = 1){
     let { monsterName, action, isMulti } = this.props
     let { name } = action
-    
     if (isMulti) { return }
 
-    let atkRoll = this.rollAtk()
+    let atkRolls = []
+    let dmgRolls = []
 
-    // add action to state
+    for (let i = 0; i < numTimes; i++){
+      let atkRoll = this.rollAtk()
+      let dmgRoll = this.rollDmg(atkRoll === 'CRIT')
+      atkRolls.push(atkRoll)
+      dmgRolls.push(dmgRoll)
+    }
+
+    // add actions to state
     this.props.addActionItem({
-      monsterName, name,
-      atkRoll: atkRoll,
-      dmgRoll: this.rollDmg(atkRoll === 'CRIT')
+      monsterName,
+      name,
+      atkRolls: atkRolls,
+      dmgRolls: dmgRolls
     })
     this.props.updateShowMessage(true)
   }
 
+  handleDropdownChange(e){
+    let numTimes = parseInt(e.target.value)
+    numTimes = numTimes !== null ? numTimes : 0
+    e.target.value = "-"
+
+    this.handleClick(numTimes)
+  }
+
   render(){
-    let { name, desc } = this.props.action
+    let { isMulti, action } = this.props
+    let { name, desc } = action
+
+    let options = ["-", 1, 2, 3, 4, 5, 10, 20].map((n) => {
+      return (
+        <option className="option" key={`option-${n}`} value={n}>{n}</option>
+      )
+    })
 
     return (
-      <p className="monster-action" title="Click to Trigger" onClick={this.handleClick}>
-        <strong className="emph">{name}.</strong>{desc}
-      </p>
+      <div className={`monster-action${isMulti ? " multi" : ""}`} title={`${isMulti ? "" : "Click to Trigger"}`}>
+        <p onClick={this.handleClick}>
+          <strong className="emph">{name}. </strong>{desc}
+        </p>
+        {
+          !isMulti
+          ?
+          <select onChange={this.handleDropdownChange}>
+            { options }
+          </select>
+          :
+          ""
+        }
+      </div>
     )
   }
 }
