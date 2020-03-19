@@ -126,7 +126,7 @@ strong {
 }
 .App .view {
   margin-bottom: 100px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .App .hidden {
   visibility: hidden;
@@ -199,11 +199,49 @@ strong {
 }
 .Header {
   top: 0px;
+  height: 80px;
+}
+
+.ActionHistory {
+  background-color: white;
+}
+
+.Action {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 7px;
+}
+.Action th, .Action td {
+  padding: 1px 8px;
+}
+.Action td {
+  border: 1px solid gray;
+}
+.Action p {
+  line-height: 20px;
+}
+.Action .sides {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
+}
+.Action .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Action .hit {
+  background-color: lightgreen;
+}
+.Action .miss {
+  background-color: pink;
 }
 
 .MessageToast {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: fixed;
   bottom: 90px;
   margin-left: 5%;
@@ -217,6 +255,8 @@ strong {
 .MessageToast .Action {
   background-color: inherit;
   border: none;
+  margin: 10px 0px;
+  padding: 0px;
 }
 
 .Monster {
@@ -289,23 +329,6 @@ strong {
   .MonsterList {
     font-size: 12px;
   }
-}
-.ActionHistory {
-  background-color: white;
-}
-
-.Action {
-  background-color: white;
-  border: 1px solid gray;
-  border-radius: 3px;
-  margin: 10px;
-  padding: 7px;
-}
-.Action th, .Action td {
-  padding: 1px 4px;
-}
-.Action p {
-  line-height: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */

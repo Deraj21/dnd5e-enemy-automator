@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateSearch, clearEncounter } from '../ducks/reducer'
+import { updateSearch, clearEncounter, clearActionHistory } from '../ducks/reducer'
+
+import TargetAC from './TargetAC'
 
 const MONSTER_LIST_VIEW = "Add Monsters",
       ENCOUNTER_VIEW = "Run Encounter",
@@ -17,15 +19,14 @@ class Header extends Component {
     this.props.updateSearch( e.target.value )
   }
 
-  // LEFT OFF: figure out why 2nd `clearEncounterBt` doesn't work
-
   render(){
     let { currentView, search } = this.props
     let clearEncounterBtn = <button onClick={this.props.clearEncounter}>Clear Encounter</button>
+    let clearActionsBtn = <button onClick={this.props.clearActionHistory}>Clear Actions</button>
 
     return (
       <div className="Header fixed-elem">
-        <h2>{currentView}</h2>
+        <h3>{currentView}</h3>
         {
           currentView === MONSTER_LIST_VIEW
           ?
@@ -38,11 +39,16 @@ class Header extends Component {
           ?
           <div>
             { clearEncounterBtn }
+            { clearActionsBtn }
+            <TargetAC />
           </div>
           :
           currentView === ACTION_HISTORY_VIEW
           ?
-          <div>action history</div>
+          <div>
+            { clearActionsBtn }
+            <TargetAC />
+          </div>
           :
           <div>404: view not found</div>
         }
@@ -63,4 +69,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, { updateSearch, clearEncounter })(Header);
+export default connect(mapStateToProps, { updateSearch, clearEncounter, clearActionHistory })(Header);

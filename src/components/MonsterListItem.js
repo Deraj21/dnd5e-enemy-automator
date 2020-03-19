@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import Axios from 'axios'
 import { connect } from 'react-redux'
-import { addToEncounter, removeFromEncounter } from '../ducks/reducer'
+import { removeEncounterItem, addEncounterItem } from '../ducks/reducer'
 import AddButton from './buttons/AddButton'
 
 class MonsterListItem extends Component{
@@ -11,20 +12,27 @@ class MonsterListItem extends Component{
     this.getAdded = this.getAdded.bind(this)
   }
 
+  getMonster(name){
+    return Axios.get(`https://api.open5e.com/monsters/?name=${name}`)
+  }
+
   handleClick(){
-    let { name, addToEncounter, removeFromEncounter } = this.props
+    let { name, addEncounterItem, removeEncounterItem } = this.props
     let added = this.getAdded()
 
     if (!added){
-      addToEncounter(name)
+      this.getMonster(name)
+        .then(res => {
+          addEncounterItem(res.data.results[0])
+        })
     } else {
-      removeFromEncounter(name)
+      removeEncounterItem(name)
     }
   }
 
   getAdded(){
-    let { name, monsterNames } = this.props
-    return monsterNames.indexOf(name) !== -1
+    let { name, encounterData } = this.props
+    return encounterData.findIndex(item => item.name === name) !== -1
   }
 
   render(){
@@ -48,11 +56,11 @@ class MonsterListItem extends Component{
 
 function mapStateToProps(state){
   let {
-    monsterNames
+    encounterData
   } = state
   return {
-    monsterNames
+    encounterData
   }
 }
 
-export default connect(mapStateToProps, { addToEncounter, removeFromEncounter })(MonsterListItem)
+export default connect(mapStateToProps, { addEncounterItem, removeEncounterItem })(MonsterListItem)

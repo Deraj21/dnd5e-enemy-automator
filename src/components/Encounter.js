@@ -1,45 +1,18 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 import { connect } from 'react-redux';
 import Monster from './Monster';
 
 class Encounter extends Component {
-  constructor(){
-    super()
-
-    this.state = {
-      monsterData: [],
-      index: 0
-    }
-  }
-
-  componentDidMount(){
-    let { monsterNames } = this.props
-
-    // load monsters
-    monsterNames.forEach((name, i) => {
-      this.getMonster(name)
-        .then(res => {
-          let newMonsters = [...this.state.monsterData, { i: i, data: res.data.results[0] }]
-          this.setState({
-            monsterData: newMonsters
-          })
-        })
-    })
-  }
-
-  getMonster(name){
-    return Axios.get(`https://api.open5e.com/monsters/?name=${name}`)
-  }
 
   render(){
+    let { encounterData } = this.props
 
     // monster components
-    let monsters = this.state.monsterData
+    let monsters = encounterData
       .sort((a,b) => a.i - b.i )
       .map(m => {
         return (
-          <Monster data={ m.data } key={`Monster-${m.data.name}`}/>
+          <Monster data={ m } key={`Monster-${m.name}`}/>
         )
       })
 
@@ -53,10 +26,12 @@ class Encounter extends Component {
 
 function mapStateToProps(state){
   let {
-    monsterNames
+    monsterNames,
+    encounterData
   } = state
   return {
-    monsterNames
+    monsterNames,
+    encounterData
   }
 }
 
