@@ -1,7 +1,7 @@
 let initialState = {
-  currentView: "Encounter",
+  currentView: "Monster List",
   monsterData: [],
-  monsterNames: [""],
+  monsterNames: [],
   actionHistory: [],
   currentFilters: [],
   search: "",
@@ -15,6 +15,7 @@ const UPDATE_CURRENT_VIEW = "UPDATE_CURRENT_VIEW",
       UPDATE_SHOW_MESSAGE = "UPDATE_SHOW_MESSAGE",
       ADD_TO_ENCOUNTER = "ADD_TO_ENCOUNTER",
       REMOVE_FROM_ENCOUNTER = "REMOVE_FROM_ENCOUNTER",
+      CLEAR_ENCOUNTER = "CLEAR_ENCOUNTER",
       UPDATE_SEARCH = "UPDATE_SEARCH"
 
 // reducer
@@ -34,8 +35,10 @@ function reducer(state = initialState, action){
     case REMOVE_FROM_ENCOUNTER:
       let newList = [ ...state.monsterNames ]
       let index = newList.indexOf(payload)
-      let name = newList.splice(index, 1)[0]
+      newList.splice(index, 1)
       return { ...state, monsterNames: newList }
+    case CLEAR_ENCOUNTER:
+      return { ...state, monsterNames: [] }
     case UPDATE_SEARCH:
       return { ...state, search: payload }
     default:
@@ -83,6 +86,13 @@ export function removeFromEncounter(name){
   return {
     type: REMOVE_FROM_ENCOUNTER,
     payload: name
+  }
+}
+
+export function clearEncounter(){
+  return {
+    type: CLEAR_ENCOUNTER,
+    payload: null
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { updateCurrentView } from '../ducks/reducer'
 
 import werewolf from '../media/werewolf.png'
@@ -15,23 +15,23 @@ class Footer extends Component {
   }
 
   handleTabClick(e){
-    let view = e.target.getAttribute("toview");
-    this.props.updateCurrentView(view);
+    let view = e.currentTarget.childNodes[1].innerHTML
+    this.props.updateCurrentView(view)
   }
 
   render(){
 
     return (
-      <div className="Footer">
-        <NavLink exact to="/" className="link" activeClassName="active-link">
+      <div className="Footer fixed-elem">
+        <NavLink exact to="/" className="link" activeClassName="active-link" onClick={this.handleTabClick}>
           <img src={werewolf} alt="werewolf"/>
           <p>Add Monsters</p>
         </NavLink>
-        <NavLink exact to="/Encounter" className="link" activeClassName="active-link">
+        <NavLink exact to="/Encounter" className="link" activeClassName="active-link" onClick={this.handleTabClick}>
           <img src={swordShield} alt="sword and sheild"/>
           <p>Run Encounter</p>
         </NavLink>
-        <NavLink exact to="/ActionHistory" className="link" activeClassName="active-link">
+        <NavLink exact to="/ActionHistory" className="link" activeClassName="active-link" onClick={this.handleTabClick}>
           <img src={d20} alt="d20"/>
           <p>Action History</p>
         </NavLink>

@@ -45,7 +45,6 @@ class Encounter extends Component {
 
     return (
       <div className="Encounter view">
-        <h2>Run Encounter</h2>
         { monsters }
       </div>
     );
@@ -53,8 +52,11 @@ class Encounter extends Component {
 }
 
 function mapStateToProps(state){
+  let {
+    monsterNames
+  } = state
   return {
-    monsterNames: state.monsterNames // read only (for now)
+    monsterNames
   }
 }
 

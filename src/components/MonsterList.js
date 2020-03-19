@@ -6,11 +6,6 @@ import { updateMonsterData, updateSearch } from '../ducks/reducer'
 import MonsterListItem from './MonsterListItem'
 
 class MonsterList extends Component {
-  constructor(){
-    super()
-
-    this.handleSearchChange = this.handleSearchChange.bind(this)
-  }
 
   componentDidMount(){
     let { monsterData, updateMonsterData } = this.props
@@ -23,11 +18,7 @@ class MonsterList extends Component {
     }
   }
 
-  handleSearchChange(e){
-    this.props.updateSearch( e.target.value )
-  }
-
-  // TODO: change later to call 2nd page when the user scrolls to the bottom
+  // TODO: change later to load more when the user scrolls to the bottom
   getData(){
     return Axios.get("https://api.open5e.com/monsters/?fields=slug,name,challenge_rating,type,size,hit_points,document__slug,%20document__title&limit=2000&ordering=slug")
   }
@@ -53,8 +44,7 @@ class MonsterList extends Component {
 
     return (
       <div className="MonsterList view" >
-        <h2>Add Monsters</h2>
-        <input type="text" value={search} onChange={this.handleSearchChange}/>
+        
         <table>
           <thead>
             <tr className="table-header">

@@ -2,12 +2,12 @@ import React from 'react'
 
 function Action(props){
   let { name, monsterName, atkRolls, dmgRolls } = props.action
-
-  console.log(props.action)
+  atkRolls = atkRolls !== undefined ? atkRolls : []
+  dmgRolls = dmgRolls !== undefined ? dmgRolls : []
   
   let rows = atkRolls.map((item, i) => {
     return (
-      <tr>
+      <tr key={`roll-${i}`}>
         <td><strong>{i+1}</strong></td>
         <td>{atkRolls[i]}</td>
         <td>{dmgRolls[i]}</td>

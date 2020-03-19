@@ -27,14 +27,14 @@ class ClickableAction extends Component {
   }
 
   rollAtk(){
-    let { attack_bonus, desc } = this.props.action
+    let { attack_bonus } = this.props.action
 
     let bonus = attack_bonus ? attack_bonus : 0
     let natRoll = Math.ceil(Math.random() * 20)
     return natRoll === 20 ? 'CRIT' : natRoll + bonus
   }
 
-  handleClick(numTimes = 1){
+  handleClick(e, numTimes = 1){
     let { monsterName, action, isMulti } = this.props
     let { name } = action
     if (isMulti) { return }
@@ -64,7 +64,7 @@ class ClickableAction extends Component {
     numTimes = numTimes !== null ? numTimes : 0
     e.target.value = "-"
 
-    this.handleClick(numTimes)
+    this.handleClick(e, numTimes)
   }
 
   render(){

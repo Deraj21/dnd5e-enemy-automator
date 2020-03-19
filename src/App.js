@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { updateCurrentView } from './ducks/reducer'
 
 import MonsterList from './components/MonsterList'
 import Encounter from './components/Encounter'
 import ActionHistory from './components/ActionHistory'
 import Footer from './components/Footer'
+import Header from './components/Header'
 import MessageToast from './components/MessageToast'
 
 import './App.css';
@@ -16,6 +16,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+        <Header/>
         <Footer/>
         <MessageToast/>
         <div>
@@ -38,4 +39,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, { updateCurrentView })(App);
+export default connect(mapStateToProps, null)(App);

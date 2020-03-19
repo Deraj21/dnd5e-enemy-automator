@@ -10,8 +10,17 @@
 - User can scroll through to view the previous results from the action history
 
 ## Todo (MVP)
+- **Done**
+  - ~~style actions like buttons~~
 - **Now**
-  - style actions like buttons
+  - add header
+    - ~~search bar in header~~
+    - LEFT OFF: figure out why 2nd `clearEncounterBtn` doesn't work
+    - clear monsters in encounter button
+    - clear action historybutton
+    - dynamically displays content based on current view
+      - add target AC to action history header
+  - actions change color based on whether they hit or not, and total the damage based on what hits
 - **Next**
   - figure out nested-routing so that I can do master-detail when screen gets big enough
   - style everything to work for mobile and bigger
@@ -23,9 +32,9 @@
   - Message Toast can be swiped away on touch screen
   - hide scroll-bar (or at least style to make thinner and nicer looking)
   - put dropdown next to button for multiple actions at a time
+  - load only *some* monsterListItems at begining, and load more when scroll to the bottom
 
 ## Post-MVP
-- ~~figure out how to keep state with a reload (cookies?)~~
 - figure out how to handle multi-attacks or special actions
 - clear Encounter button
   - in MonsterList, Encounter, or both?
@@ -35,4 +44,3 @@
   - user can login and save multiple encounters
   - maybe no login, just use cookies, and only save one encounter?
   - each saved encounter will only need to store a list of monster id's
-  - 

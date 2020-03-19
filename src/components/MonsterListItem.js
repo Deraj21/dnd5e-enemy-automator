@@ -28,7 +28,7 @@ class MonsterListItem extends Component{
   }
 
   render(){
-    let { name, type, size, hp, cr, monsterNames } = this.props
+    let { name, type, size, hp, cr } = this.props
     let added = this.getAdded()
   
     return (

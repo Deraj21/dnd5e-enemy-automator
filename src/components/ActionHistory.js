@@ -13,7 +13,6 @@ class ActionHistory extends Component{
 
     return (
       <div className="ActionHistory view">
-        <h2>Action History</h2>
         { actions }
       </div>
     )

@@ -51,11 +51,18 @@ strong
 .emph
   font-style: italic
 
+.fixed-elem
+  position: fixed
+  width: 100vw
+  background-color: white
+  box-shadow: 0px 0px 8px -3px black
+
 .App
   background-color: white
 
   .view
     margin-bottom: 100px
+    margin-top: 50px
 
   .hidden
     visibility: hidden
@@ -63,6 +70,7 @@ strong
 // import component styles
 @import 'buttons.sass'
 @import 'Footer.sass'
+@import 'Header.sass'
 @import 'MessageToast.sass'
 @import 'Encounter.sass'
 @import 'MonsterList.sass'
