@@ -1,4 +1,5 @@
 @import 'reset.sass'
+@import 'vars.sass'
 
 body
   font-family: Arial, Helvetica, sans-serif
@@ -61,15 +62,25 @@ strong
   background-color: white
 
   .view
-    margin-bottom: 100px
+    // margin-bottom: 100px
     margin-top: 100px
 
   .hidden
     visibility: hidden
 
+@media screen and (max-width: $medium-phone)
+  .App
+    margin-top: $medium-header
+
+@media screen and (max-width: $small-phone)
+  .App
+    margin-top: $small-header
+
+
 // import component styles
 @import 'buttons.sass'
 @import 'Footer.sass'
+@import 'Tabs.sass'
 @import 'Header.sass'
 @import 'ActionHistory.sass'
 @import 'MessageToast.sass'

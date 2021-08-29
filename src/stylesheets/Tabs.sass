@@ -1,20 +1,25 @@
-.Footer
+.Tabs
   display: flex
   flex-direction: row
-  justify-content: space-around
+  justify-content: flex-start
   align-items: center
 
-  bottom: 0px
-  height: 80px
+  // top: 0px
+  // height: 60px
   background-color: white
   cursor: pointer
 
   .link
     display: flex
-    justify-content: space-around
+    justify-content: flex-start
     align-items: center
     height: 100%
     width: 33%
+    max-width: 200px
+    padding: 5px
+    border: 1px solid black
+    border-radius: 3px
+    margin-left: 2px
     
     &:hover
       transition-property: background-color, color
@@ -28,12 +33,13 @@
     color: white
 
   img
-    height: 36px
-    margin: 5px
+    height: 20px
+    margin-bottom: 3px
+    margin-right: 3px
 
 // medium phone
-@media screen and (max-width: 375px)
-  .Footer
+@media screen and (max-width: $medium-phone)
+  .Tabs
     .link
       flex-direction: column
 

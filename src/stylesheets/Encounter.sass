@@ -1,5 +1,8 @@
+.Encounter
+  display: grid
+  
 .Monster
-  background-color: lemonchiffon
+  background-color: $dnd-tan
   margin: 20px
   padding: 10px
   border: 1px solid gray
@@ -22,13 +25,14 @@
 
     p
       cursor: pointer
-      border: 1px solid lemonchiffon
+      border: 1px solid $dnd-tan
       padding: 3px
       margin: 0px 5px
 
       &:hover
-        background-color: white
-        border: 1px solid lightgray
+        background-color: $dnd-tan
+        filter: brightness(1.15)
+        border: 1px solid gray
         border-radius: 3px
 
   .multi
@@ -36,8 +40,16 @@
 
     p:hover
       cursor: default
-      border: 1px solid lemonchiffon
+      border: 1px solid $dnd-tan
       background-color: inherit
 
   .hr-thin
     border-width: .5px
+
+@media screen and ( min-width: $laptop-medium )
+  .Encounter
+    grid-template-columns: 1fr 1fr
+
+@media screen and ( min-width: $laptop-large )
+  .Encounter
+    grid-template-columns: 1fr 1fr 1fr

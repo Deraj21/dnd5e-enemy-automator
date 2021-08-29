@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { updateSearch, clearEncounter, clearActionHistory } from '../ducks/reducer'
 
 import TargetAC from './TargetAC'
+import Tabs from './Tabs'
 
 const MONSTER_LIST_VIEW = "Add Monsters",
       ENCOUNTER_VIEW = "Run Encounter",
@@ -26,7 +27,7 @@ class Header extends Component {
 
     return (
       <div className="Header fixed-elem">
-        <h3>{currentView}</h3>
+        <Tabs />
         {
           currentView === MONSTER_LIST_VIEW
           ?

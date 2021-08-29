@@ -125,13 +125,22 @@ strong {
   background-color: white;
 }
 .App .view {
-  margin-bottom: 100px;
   margin-top: 100px;
 }
 .App .hidden {
   visibility: hidden;
 }
 
+@media screen and (max-width: 400px) {
+  .App {
+    margin-top: 95px;
+  }
+}
+@media screen and (max-width: 322px) {
+  .App {
+    margin-top: 110px;
+  }
+}
 .CloseButton {
   display: flex;
   justify-content: flex-end;
@@ -192,8 +201,50 @@ strong {
   margin: 5px;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 375px) {
   .Footer .link {
+    flex-direction: column;
+  }
+}
+.Tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
+.Tabs .link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 33%;
+  max-width: 200px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-left: 2px;
+}
+.Tabs .link:hover {
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  background-color: maroon;
+  color: white;
+}
+.Tabs .active-link {
+  text-decoration: underline;
+  background-color: maroon;
+  color: white;
+}
+.Tabs img {
+  height: 20px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+}
+
+@media screen and (max-width: 400px) {
+  .Tabs .link {
     flex-direction: column;
   }
 }
@@ -202,6 +253,16 @@ strong {
   height: 80px;
 }
 
+@media screen and (max-width: 400px) {
+  .Header {
+    height: 95px;
+  }
+}
+@media screen and (max-width: 322px) {
+  .Header {
+    height: 110px;
+  }
+}
 .ActionHistory {
   background-color: white;
 }
@@ -259,8 +320,12 @@ strong {
   padding: 0px;
 }
 
+.Encounter {
+  display: grid;
+}
+
 .Monster {
-  background-color: lemonchiffon;
+  background-color: #faf6d6;
   margin: 20px;
   padding: 10px;
   border: 1px solid gray;
@@ -282,13 +347,14 @@ strong {
 }
 .Monster .monster-action p {
   cursor: pointer;
-  border: 1px solid lemonchiffon;
+  border: 1px solid #faf6d6;
   padding: 3px;
   margin: 0px 5px;
 }
 .Monster .monster-action p:hover {
-  background-color: white;
-  border: 1px solid lightgray;
+  background-color: #faf6d6;
+  filter: brightness(1.15);
+  border: 1px solid gray;
   border-radius: 3px;
 }
 .Monster .multi {
@@ -296,13 +362,23 @@ strong {
 }
 .Monster .multi p:hover {
   cursor: default;
-  border: 1px solid lemonchiffon;
+  border: 1px solid #faf6d6;
   background-color: inherit;
 }
 .Monster .hr-thin {
   border-width: 0.5px;
 }
 
+@media screen and (min-width: 860px) {
+  .Encounter {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1330px) {
+  .Encounter {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 .MonsterList table {
   border-collapse: collapse;
   text-align: left;

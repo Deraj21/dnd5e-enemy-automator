@@ -78,7 +78,7 @@ class ClickableAction extends Component {
     })
 
     return (
-      <div className={`monster-action${isMulti ? " multi" : ""}`} title={`${isMulti ? "" : "Click to Trigger"}`}>
+      <div className={`monster-action${isMulti ? " multi" : ""}`} title={`${isMulti ? "" : "Group action"}`}>
         <p onClick={this.handleClick}>
           <strong className="emph">{name}. </strong>{desc}
         </p>

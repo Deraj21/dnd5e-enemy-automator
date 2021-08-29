@@ -11,36 +11,27 @@
 
 ## Todo (MVP)
 - **Done**
-  - ~~style actions like buttons~~
+  - ~~put dropdown next to button for multiple actions at a time~~
+  - ~~FIX: target ac bar changes it's number randomly or sets it to the end?~~ (seems to be fixed)
 - **Now**
-  - ~~add header~~
-    - ~~search bar in header~~
-    - ~~LEFT OFF: figure out why 2nd `clearEncounterBtn` doesn't work~~
-    - ~~clear monsters in encounter button~~
-    - ~~clear action historybutton~~
-    - ~~dynamically displays content based on current view~~
-      - ~~add target AC to action history header~~
-  - ~~actions change color based on whether they hit or not~~
-  - ~~total the damage based on what hits~~
-  - ~~style actions~~
-  - style header
+  - ~~Footer changes to tabs?~~
+  - Monsters in Encounter show multiple per row
 - **Next**
-  - figure out nested-routing so that I can do master-detail when screen gets big enough
-  - style everything to work for mobile and bigger
-    - Footer changes to tabs?
-    - Monsters in Encounter show multiple per row
-    - MonsterList shows more and more info as screen gets bigger
+  - BUG: search doesn't allow spaces
+  - figure out special actions (saving throw instead of attack roll)
+  - HOST somewhere!
 - **Later**
+  - MonsterList shows more and more info as screen gets bigger
   - style actionHistory better
+  - style header better
+  - figure out nested-routing so that I can do master-detail when screen gets big enough
   - Message Toast can be swiped away on touch screen
   - hide scroll-bar (or at least style to make thinner and nicer looking)
-  - put dropdown next to button for multiple actions at a time
   - optimize performance
     - load only *some* monsterListItems at begining, and load more when scroll to the bottom
-  - FIX: target ac bar changes it's number randomly or sets it to the end?
 
 ## Post-MVP
-- figure out how to handle multi-attacks or special actions
+  - figure out multi-attacks
 - filters & sorts in MonsterList
 - link to google photos for each monster?
 - ADD A BACKEND:

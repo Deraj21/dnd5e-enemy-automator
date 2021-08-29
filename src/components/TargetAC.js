@@ -18,6 +18,7 @@ class TargetAC extends Component{
     
     return (
       <div className="TargetAC">
+        <span>Target AC: </span>
         <input type="range" onChange={this.handleRangeChange} min="3" max="25" value={targetAC}/>
         <span>{targetAC}</span>
       </div>
