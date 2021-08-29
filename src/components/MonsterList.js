@@ -28,7 +28,7 @@ class MonsterList extends Component {
 
     let monsterList = monsterData
       .filter(item => {
-        return item.name.includes(search) || item.slug.includes(search)
+        return item.name.toLowerCase().includes(search.toLowerCase()) || item.slug.toLowerCase().includes(search.toLowerCase())
       })
       .map(item => {
         return (

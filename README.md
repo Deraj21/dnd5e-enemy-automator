@@ -13,11 +13,14 @@
 - **Done**
   - ~~put dropdown next to button for multiple actions at a time~~
   - ~~FIX: target ac bar changes it's number randomly or sets it to the end?~~ (seems to be fixed)
-- **Now**
   - ~~Footer changes to tabs?~~
-  - Monsters in Encounter show multiple per row
+  - ~~BUG: search doesn't allow spaces~~
+- **Now**
+  - Monsters in Encounter show multiple per column
+    - monster tile lengths are independant of one another
+  -  [Multi-Column blog](https://every-layout.dev/blog/multi-column-manipulation/)
+  -  [MDN scc grid guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - **Next**
-  - BUG: search doesn't allow spaces
   - figure out special actions (saving throw instead of attack roll)
   - HOST somewhere!
 - **Later**
