@@ -15,15 +15,18 @@
   - ~~FIX: target ac bar changes it's number randomly or sets it to the end?~~ (seems to be fixed)
   - ~~Footer changes to tabs?~~
   - ~~BUG: search doesn't allow spaces~~
+  - ~~Monsters in Encounter show multiple per column~~
 - **Now**
-  - Monsters in Encounter show multiple per column
-    - monster tile lengths are independant of one another
-  -  [Multi-Column blog](https://every-layout.dev/blog/multi-column-manipulation/)
-  -  [MDN scc grid guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+  - monster tile lengths are independant of one another
+    - [Multi-Column blog](https://every-layout.dev/blog/multi-column-manipulation/)
+    - [MDN scc grid guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - **Next**
-  - figure out special actions (saving throw instead of attack roll)
+  - figure out how to parse special actions (saving throw instead of attack roll)
+    - take a look at monster data to see if there is something consistant about special actions
+    - if not, add a place to do rolls on the side or something
   - HOST somewhere!
 - **Later**
+  - add ability to half or double damage in action history 
   - MonsterList shows more and more info as screen gets bigger
   - style actionHistory better
   - style header better
@@ -32,7 +35,7 @@
   - hide scroll-bar (or at least style to make thinner and nicer looking)
   - optimize performance
     - load only *some* monsterListItems at begining, and load more when scroll to the bottom
-
+  - BUG: fix issue where sometimes site starts with 1st tab highlighted, but shows 2nd or 3rd tab in the view; something to do with it remembering where you last left off, but not applying the style changes to the tabs
 ## Post-MVP
   - figure out multi-attacks
 - filters & sorts in MonsterList

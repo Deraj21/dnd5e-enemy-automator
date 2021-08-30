@@ -69,6 +69,7 @@ function Monster(props){
   }
 
   // actions
+  console.log(actions)
   let actionElements = actions.map(action => {
     let isMulti = action.name === "Multiattack"
     return (
