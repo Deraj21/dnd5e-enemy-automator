@@ -1,5 +1,7 @@
 .Encounter
-  display: grid
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
   
 .Monster
   background-color: $dnd-tan
@@ -7,9 +9,14 @@
   padding: 10px
   border: 1px solid gray
   border-radius: 5px
-  max-width: 500px
+  max-width: 400px
 
   font-family: serif
+
+  .h-box
+    display: flex
+    justify-content: space-between
+
 
   .ability-score-box
     display: flex
@@ -40,6 +47,7 @@
 
     p:hover
       cursor: default
+      filter: none
       border: 1px solid $dnd-tan
       background-color: inherit
 

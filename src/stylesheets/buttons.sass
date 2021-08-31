@@ -1,13 +1,17 @@
+.Button
+  svg
+    cursor: pointer
+
+    path
+      stroke: black
+      stroke-width: 2px
+
 .CloseButton
   display: flex
   justify-content: flex-end
   margin: 3px
 
   svg
-    cursor: pointer
-    path
-      stroke: black
-      stroke-width: 2px
 
     &:hover
       path
@@ -18,9 +22,16 @@
     background-color: whitesmoke
     border-radius: 3px
     border: 1px solid gray
-    cursor: pointer
-    path
-      stroke: black
-      stroke-width: 2px
 
-      
+.ExternalLink
+  display: flex
+  justify-content: center
+  align-items: center
+
+  svg
+    &:hover
+      path
+        stroke: DodgerBlue
+        // stroke: RoyalBlue
+
+    

@@ -141,17 +141,18 @@ strong {
     margin-top: 110px;
   }
 }
+.Button svg {
+  cursor: pointer;
+}
+.Button svg path {
+  stroke: black;
+  stroke-width: 2px;
+}
+
 .CloseButton {
   display: flex;
   justify-content: flex-end;
   margin: 3px;
-}
-.CloseButton svg {
-  cursor: pointer;
-}
-.CloseButton svg path {
-  stroke: black;
-  stroke-width: 2px;
 }
 .CloseButton svg:hover path {
   stroke: gray;
@@ -161,11 +162,15 @@ strong {
   background-color: whitesmoke;
   border-radius: 3px;
   border: 1px solid gray;
-  cursor: pointer;
 }
-.AddButton svg path {
-  stroke: black;
-  stroke-width: 2px;
+
+.ExternalLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ExternalLink svg:hover path {
+  stroke: DodgerBlue;
 }
 
 .Footer {
@@ -321,7 +326,9 @@ strong {
 }
 
 .Encounter {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .Monster {
@@ -330,8 +337,12 @@ strong {
   padding: 10px;
   border: 1px solid gray;
   border-radius: 5px;
-  max-width: 500px;
+  max-width: 400px;
   font-family: serif;
+}
+.Monster .h-box {
+  display: flex;
+  justify-content: space-between;
 }
 .Monster .ability-score-box {
   display: flex;
@@ -362,6 +373,7 @@ strong {
 }
 .Monster .multi p:hover {
   cursor: default;
+  filter: none;
   border: 1px solid #faf6d6;
   background-color: inherit;
 }

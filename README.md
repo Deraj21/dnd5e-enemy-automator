@@ -16,6 +16,8 @@
   - ~~Footer changes to tabs?~~
   - ~~BUG: search doesn't allow spaces~~
   - ~~Monsters in Encounter show multiple per column~~
+  - ~~HOST somewhere!~~ (gh-pages)
+- ~~link to google photos for each monster?~~
 - **Now**
   - monster tile lengths are independant of one another
     - [Multi-Column blog](https://every-layout.dev/blog/multi-column-manipulation/)
@@ -24,9 +26,7 @@
   - figure out how to parse special actions (saving throw instead of attack roll)
     - take a look at monster data to see if there is something consistant about special actions
     - if not, add a place to do rolls on the side or something
-  - HOST somewhere!
 - **Later**
-  - add ability to half or double damage in action history 
   - MonsterList shows more and more info as screen gets bigger
   - style actionHistory better
   - style header better
@@ -39,7 +39,8 @@
 ## Post-MVP
   - figure out multi-attacks
 - filters & sorts in MonsterList
-- link to google photos for each monster?
+- turn order
+- ability to 1/2 or *2 the damage on the fly (or maybe just manipulate in any way with the keyboard)
 - ADD A BACKEND:
   - user can login and save multiple encounters
   - maybe no login, just use cookies, and only save one encounter?

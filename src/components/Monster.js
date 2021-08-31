@@ -1,16 +1,18 @@
 import React from 'react'
 import crs from '../utilities/getXP'
 import ClickableAction from './ClickableAction'
+import ExternalLink from './buttons/ExternalLink'
 
 function Monster(props){
   const formatScore = function(n){ return Math.floor((n - 10) / 2) }
-
+  
   let { name, size, type, subtype, alignment,
     armor_class, armor_desc, hit_points, hit_dice, speed,
     strength, dexterity, constitution, intelligence, wisdom, charisma,
     skills, senses, languages, challenge_rating,
     special_abilities, actions
   } = props.data
+  const googleImagesLink = `https://www.google.com/search?tbm=isch&q=dnd+${name.replace(" ", "+")}`
 
   // Speeds
   let speeds = []
@@ -79,7 +81,10 @@ function Monster(props){
 
   return (
     <div className="Monster">
-      <h4>{name}</h4>
+      <div className="h-box">
+        <h4>{name}</h4>
+        <ExternalLink href={googleImagesLink}/>
+      </div>
       <p className="emph">{size} {type}{subtype ? ` (${subtype})` : ``}, {alignment}</p>
       
       <hr/>
