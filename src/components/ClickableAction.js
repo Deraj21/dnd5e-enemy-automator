@@ -11,19 +11,26 @@ class ClickableAction extends Component {
   }
 
   rollDmg(crit = false){
+    console.log(this.props.action)
     let { damage_dice, damage_bonus } = this.props.action
     let total = damage_bonus ? damage_bonus : 0
+    let breakdown = ''
     if (damage_dice){
 
       let num = parseInt(damage_dice.split('d')[0]) * (crit ? 2 : 1)
       let die = parseInt(damage_dice.split('d')[1])
 
-      for (let i = 0; i < num; i++){
-        total += Math.ceil(Math.random() * die)
+      for (let i = 1; i <= num; i++){
+        let roll = Math.ceil(Math.random() * die)
+        total += roll
+        breakdown += roll + (i != num ? ' + ' : damage_bonus ? ' + ' + damage_bonus : '')
       }
     }
 
-    return total
+    return {
+      roll: total,
+      breakdown: breakdown
+    }
   }
 
   rollAtk(){
@@ -31,7 +38,10 @@ class ClickableAction extends Component {
 
     let bonus = attack_bonus ? attack_bonus : 0
     let natRoll = Math.ceil(Math.random() * 20)
-    return natRoll === 20 ? 'CRIT' : natRoll + bonus
+    return {
+      roll: natRoll === 20 ? 'CRIT' : natRoll + bonus,
+      breakdown: `${natRoll} + ${bonus}`
+    }
   }
 
   handleClick(e, numTimes = 1){
@@ -39,22 +49,22 @@ class ClickableAction extends Component {
     let { name } = action
     if (isMulti) { return }
 
-    let atkRolls = []
-    let dmgRolls = []
+    let attacks = []
+    let damages = []
 
     for (let i = 0; i < numTimes; i++){
-      let atkRoll = this.rollAtk()
-      let dmgRoll = this.rollDmg(atkRoll === 'CRIT')
-      atkRolls.push(atkRoll)
-      dmgRolls.push(dmgRoll)
+      let atk = this.rollAtk()
+      let dmg = this.rollDmg(atk.roll === 'CRIT')
+      attacks.push(atk)
+      damages.push(dmg)
     }
 
     // add actions to state
     this.props.addActionItem({
       monsterName,
       name,
-      atkRolls: atkRolls,
-      dmgRolls: dmgRolls
+      attacks: attacks,
+      damages: damages
     })
     this.props.updateShowMessage(true)
   }

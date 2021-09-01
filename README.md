@@ -23,11 +23,12 @@
     - [Multi-Column blog](https://every-layout.dev/blog/multi-column-manipulation/)
     - [MDN scc grid guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - **Next**
-  - figure out how to parse special actions (saving throw instead of attack roll)
-    - take a look at monster data to see if there is something consistant about special actions
-    - if not, add a place to do rolls on the side or something
+  - add rolls breakdown to action history - ex: `2d6+4 = 5 + 2 + 4 = 11 piercing dmg`
+  - while looking into new api, add a place to do rolls in header
+    - keyboard shortcut to get there
 - **Later**
   - MonsterList shows more and more info as screen gets bigger
+  - style monsterlist to look more like table
   - style actionHistory better
   - style header better
   - figure out nested-routing so that I can do master-detail when screen gets big enough

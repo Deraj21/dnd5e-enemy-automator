@@ -3,21 +3,23 @@ import { connect } from 'react-redux'
 
 function Action(props){
   let { action, targetAC } = props
-  let { name, monsterName, atkRolls, dmgRolls } = action
-  atkRolls = atkRolls !== undefined ? atkRolls : []
-  dmgRolls = dmgRolls !== undefined ? dmgRolls : []
-  
+  let { name, monsterName, attacks, damages } = action
+  attacks = attacks !== undefined ? attacks : []
+  damages = damages !== undefined ? damages : [{roll: 0, breakdown: ''}]
+  console.log(damages)
   let totalDmg = 0
 
-  let rows = atkRolls.map((roll, i) => {
-    let hit = roll >= targetAC || roll === 'CRIT'
-    if (hit) {totalDmg += dmgRolls[i]}
+  let rows = attacks.map((attack, i) => {
+    let hit = attack.roll >= targetAC || attack.roll === 'CRIT'
+    if (hit) {totalDmg += damages[i].roll}
 
     return (
       <tr key={`roll-${i}`} className={hit ? 'hit' : 'miss'}>
         <td><strong>{i+1}</strong></td>
-        <td>{atkRolls[i]}</td>
-        <td>{dmgRolls[i]}</td>
+        <td>{attacks[i].roll}</td>
+        <td>({attacks[i].breakdown})</td>
+        <td>{damages[i].roll}</td>
+        <td>({damages[i].breakdown})</td>
       </tr>
     )
   })
@@ -35,7 +37,9 @@ function Action(props){
               <tr>
                 <th></th>
                 <th>to hit</th>
+                <th></th>
                 <th>damage</th>
+                <th></th>
               </tr>
               { rows }
             </tbody>

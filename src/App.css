@@ -325,6 +325,14 @@ strong {
   padding: 0px;
 }
 
+a {
+  color: maroon;
+}
+a:hover {
+  color: #2e2e2e;
+  text-decoration: underline;
+}
+
 .Encounter {
   display: flex;
   flex-wrap: wrap;
@@ -339,10 +347,6 @@ strong {
   border-radius: 5px;
   max-width: 400px;
   font-family: serif;
-}
-.Monster .h-box {
-  display: flex;
-  justify-content: space-between;
 }
 .Monster .ability-score-box {
   display: flex;

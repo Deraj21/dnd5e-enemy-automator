@@ -71,7 +71,6 @@ function Monster(props){
   }
 
   // actions
-  console.log(actions)
   let actionElements = actions.map(action => {
     let isMulti = action.name === "Multiattack"
     return (
@@ -81,10 +80,11 @@ function Monster(props){
 
   return (
     <div className="Monster">
-      <div className="h-box">
-        <h4>{name}</h4>
-        <ExternalLink href={googleImagesLink}/>
-      </div>
+      <h4>
+        <a href={googleImagesLink} target="_blank" title="google image search">
+          {name}
+        </a>
+      </h4>
       <p className="emph">{size} {type}{subtype ? ` (${subtype})` : ``}, {alignment}</p>
       
       <hr/>
