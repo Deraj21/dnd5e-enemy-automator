@@ -8,11 +8,18 @@
   margin: 10px
   padding: 7px
 
+
   th, td
     padding: 1px 8px
   
   td
     border: 1px solid gray
+    
+  td
+    &:nth-child(2n+3)
+      border-left: none
+    &:nth-child(2n)
+      border-right: none
 
   p
     line-height: 20px

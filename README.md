@@ -11,19 +11,14 @@
 
 ## Todo (MVP)
 - **Done**
-  - ~~put dropdown next to button for multiple actions at a time~~
-  - ~~FIX: target ac bar changes it's number randomly or sets it to the end?~~ (seems to be fixed)
-  - ~~Footer changes to tabs?~~
-  - ~~BUG: search doesn't allow spaces~~
-  - ~~Monsters in Encounter show multiple per column~~
-  - ~~HOST somewhere!~~ (gh-pages)
-- ~~link to google photos for each monster?~~
+- ~~link to google photos for each monster~~
+  - ~~add rolls breakdown to action history - ex: `2d6+4 = 5 + 2 + 4 = 11 piercing dmg`~~
+  - ~~parse damage rolls a little better~~
 - **Now**
   - monster tile lengths are independant of one another
     - [Multi-Column blog](https://every-layout.dev/blog/multi-column-manipulation/)
     - [MDN scc grid guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - **Next**
-  - add rolls breakdown to action history - ex: `2d6+4 = 5 + 2 + 4 = 11 piercing dmg`
   - while looking into new api, add a place to do rolls in header
     - keyboard shortcut to get there
 - **Later**

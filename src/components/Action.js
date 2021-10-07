@@ -6,7 +6,6 @@ function Action(props){
   let { name, monsterName, attacks, damages } = action
   attacks = attacks !== undefined ? attacks : []
   damages = damages !== undefined ? damages : [{roll: 0, breakdown: ''}]
-  console.log(damages)
   let totalDmg = 0
 
   let rows = attacks.map((attack, i) => {

@@ -57,7 +57,7 @@ function reducer(state = initialState, action){
     case UPDATE_SEARCH:
       return { ...state, search: payload }
     case UPDATE_TARGET_AC:
-        return { ...state, targetAC: parseInt(payload) }
+        return { ...state, targetAC: parseInt(payload, 10) }
     default:
       return state
   }

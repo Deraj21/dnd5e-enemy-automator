@@ -13,17 +13,21 @@ class ClickableAction extends Component {
   rollDmg(crit = false){
     console.log(this.props.action)
     let { damage_dice, damage_bonus } = this.props.action
-    let total = damage_bonus ? damage_bonus : 0
+    // parse if + is in damage dice
+    let parts = damage_dice ? damage_dice.replace(' ', '').split('+') : ''
+    let bonus = damage_bonus ? damage_bonus : parts[1] ? parseInt(parts[1], 10) : 0
+    let total = bonus
     let breakdown = ''
     if (damage_dice){
 
-      let num = parseInt(damage_dice.split('d')[0]) * (crit ? 2 : 1)
-      let die = parseInt(damage_dice.split('d')[1])
+      let num = parseInt(damage_dice.split('d')[0], 10) * (crit ? 2 : 1)
+      let die = parseInt(damage_dice.split('d')[1], 10)
 
+      // roll for number of dice; add to total & dice breakdown string
       for (let i = 1; i <= num; i++){
         let roll = Math.ceil(Math.random() * die)
         total += roll
-        breakdown += roll + (i != num ? ' + ' : damage_bonus ? ' + ' + damage_bonus : '')
+        breakdown += roll + (i !== num ? ' + ' : bonus ? ' + ' + bonus : '')
       }
     }
 
@@ -70,7 +74,7 @@ class ClickableAction extends Component {
   }
 
   handleDropdownChange(e){
-    let numTimes = parseInt(e.target.value)
+    let numTimes = parseInt(e.target.value, 10)
     numTimes = numTimes !== null ? numTimes : 0
     e.target.value = "-"
 
@@ -88,14 +92,14 @@ class ClickableAction extends Component {
     })
 
     return (
-      <div className={`monster-action${isMulti ? " multi" : ""}`} title={`${isMulti ? "" : "Group action"}`}>
+      <div className={`monster-action${isMulti ? " multi" : ""}`}>
         <p onClick={this.handleClick}>
           <strong className="emph">{name}. </strong>{desc}
         </p>
         {
           !isMulti
           ?
-          <select onChange={this.handleDropdownChange}>
+          <select onChange={this.handleDropdownChange} title="group action">
             { options }
           </select>
           :

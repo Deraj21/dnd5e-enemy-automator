@@ -285,6 +285,12 @@ strong {
 .Action td {
   border: 1px solid gray;
 }
+.Action td:nth-child(2n+3) {
+  border-left: none;
+}
+.Action td:nth-child(2n) {
+  border-right: none;
+}
 .Action p {
   line-height: 20px;
 }
