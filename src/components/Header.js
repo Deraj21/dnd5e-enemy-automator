@@ -4,6 +4,7 @@ import { updateSearch, clearEncounter, clearActionHistory } from '../ducks/reduc
 
 import TargetAC from './TargetAC'
 import Tabs from './Tabs'
+import Roller from './Roller'
 
 const MONSTER_LIST_VIEW = "Add Monsters",
       ENCOUNTER_VIEW = "Run Encounter",
@@ -28,31 +29,34 @@ class Header extends Component {
     return (
       <div className="Header fixed-elem">
         <Tabs />
-        {
-          currentView === MONSTER_LIST_VIEW
-          ?
-          <div>
-            <input type="text" value={search} onChange={this.handleSearchChange}/>
-            { clearEncounterBtn }
-          </div>
-          :
-          currentView === ENCOUNTER_VIEW
-          ?
-          <div>
-            { clearEncounterBtn }
-            { clearActionsBtn }
-            <TargetAC />
-          </div>
-          :
-          currentView === ACTION_HISTORY_VIEW
-          ?
-          <div>
-            { clearActionsBtn }
-            <TargetAC />
-          </div>
-          :
-          <div>404: view not found</div>
-        }
+        <div>
+          {
+            currentView === MONSTER_LIST_VIEW
+            ?
+            <div>
+              <input type="text" value={search} onChange={this.handleSearchChange}/>
+              { clearEncounterBtn }
+            </div>
+            :
+            currentView === ENCOUNTER_VIEW
+            ?
+            <div>
+              { clearEncounterBtn }
+              { clearActionsBtn }
+              <TargetAC />
+            </div>
+            :
+            currentView === ACTION_HISTORY_VIEW
+            ?
+            <div>
+              { clearActionsBtn }
+              <TargetAC />
+            </div>
+            :
+            <div>404: view not found</div>
+          }
+          <Roller />
+        </div>
       </div>
     )
   }

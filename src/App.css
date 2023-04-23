@@ -257,6 +257,12 @@ strong {
   top: 0px;
   height: 80px;
 }
+.Header div {
+  display: flex;
+}
+.Header div .Roller {
+  margin-left: 20px;
+}
 
 @media screen and (max-width: 400px) {
   .Header {
